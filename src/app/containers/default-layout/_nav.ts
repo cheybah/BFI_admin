@@ -2,31 +2,54 @@ import { INavData } from '@coreui/angular';
 
 export const navItems: INavData[] = [
   {
-    name: 'Dashboard',
+    name: 'Tableau de bord',
     url: '/dashboard',
     iconComponent: { name: 'cil-speedometer' },
-    badge: {
-      color: 'info',
-      text: 'NEW'
-    }
+   
   },
   {
     title: true,
-    name: 'Theme'
+    name: 'Consultations'
   },
   {
-    name: 'Colors',
+    name: 'Clients',
     url: '/theme/colors',
-    iconComponent: { name: 'cil-drop' }
+    iconComponent: { name: 'cil-people' }
   },
   {
-    name: 'Typography',
+    name: 'Agences',
     url: '/theme/typography',
     linkProps: { fragment: 'someAnchor' },
-    iconComponent: { name: 'cil-pencil' }
+    iconComponent: { name: 'cilBuilding' }
   },
   {
-    name: 'Components',
+    name: 'Comptes',
+    url: '/theme/typography',
+    linkProps: { fragment: 'someAnchor' },
+    iconComponent: { name: 'cil-pencil' },
+    children: [
+      {
+        name: 'Listes',
+        url: '/base/accordion'
+      },
+      {
+        name: 'Types',
+        url: '/base/carousel'
+      },
+      {
+        name: 'Services',
+        url: '/base/collapse'
+      }  
+    ]
+  },
+  {
+    name: 'Employées',
+    url: '/theme/typography',
+    linkProps: { fragment: 'someAnchor' },
+    iconComponent: { name: 'cil-user' }
+  },
+  {
+    name: 'Opérations bancaires',
     title: true
   },
   {
@@ -97,7 +120,7 @@ export const navItems: INavData[] = [
     ]
   },
   {
-    name: 'Buttons',
+    name: 'Transférer',
     url: '/buttons',
     iconComponent: { name: 'cil-cursor' },
     children: [
@@ -209,19 +232,15 @@ export const navItems: INavData[] = [
     name: 'Widgets',
     url: '/widgets',
     iconComponent: { name: 'cil-calculator' },
-    badge: {
-      color: 'info',
-      text: 'NEW'
-    }
   },
   {
     title: true,
-    name: 'Extras'
+    name: 'Gestion du flux de travail'
   },
   {
-    name: 'Pages',
+    name: 'Blogues',
     url: '/login',
-    iconComponent: { name: 'cil-star' },
+    iconComponent: { name: 'cil-notes' },
     children: [
       {
         name: 'Login',
@@ -240,6 +259,11 @@ export const navItems: INavData[] = [
         url: '/500'
       }
     ]
+  },
+  {
+    name: 'Communication',
+    url: '/login',
+    iconComponent: { name: 'cil-notes' },
   },
   {
     title: true,
