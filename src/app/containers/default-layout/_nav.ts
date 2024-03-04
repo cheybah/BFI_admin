@@ -4,11 +4,8 @@ export const navItems: INavData[] = [
   {
     name: 'Tableau de bord',
     url: '/dashboard',
-    icon: 'bi bi-speedometer2', // Bootstrap icon class
-    badge: {
-      color: 'info',
-      text: '2+'
-    }
+    iconComponent: { name: 'cil-speedometer' },
+   
   },
   {
     title: true,
@@ -17,7 +14,13 @@ export const navItems: INavData[] = [
   {
     name: 'Clients',
     url: '/theme/colors',
-    icon: 'bi bi-people-fill' // Bootstrap icon class
+    iconComponent: { name: 'cil-people' }
+  },
+  {
+    name: 'Agences',
+    url: '/theme/typography',
+    linkProps: { fragment: 'someAnchor' },
+    iconComponent: { name: 'cilBuilding' }
   },
   {
     name: 'Comptes',
@@ -43,193 +46,52 @@ export const navItems: INavData[] = [
     name: 'Employées',
     url: '/theme/typography',
     linkProps: { fragment: 'someAnchor' },
-    icon: 'bi bi-building-fill' // Bootstrap icon class
+    iconComponent: { name: 'cil-user' }
   },
   {
     name: 'Opérations bancaires',
     title: true
   },
   {
-    name: 'Base',
+    name: 'Opérations monétaires',
     url: '/base',
-    icon: 'bi bi-pencil' ,// Bootstrap icon class
+    iconComponent: { name: 'cil-puzzle' },
     children: [
       {
-        name: 'Accordion',
-        url: '/base/accordion'
-      },
-      {
-        name: 'Breadcrumbs',
-        url: '/base/breadcrumbs'
-      },
-      {
-        name: 'Cards',
+        name: 'Encaissement',
         url: '/base/cards'
       },
       {
-        name: 'Carousel',
-        url: '/base/carousel'
+        name: 'Virement',
+        url: '/base/cards'
       },
       {
-        name: 'Collapse',
-        url: '/base/collapse'
+        name: 'Versement',
+        url: '/base/cards'
       },
       {
-        name: 'List Group',
-        url: '/base/list-group'
-      },
-      {
-        name: 'Navs & Tabs',
-        url: '/base/navs'
-      },
-      {
-        name: 'Pagination',
-        url: '/base/pagination'
-      },
-      {
-        name: 'Placeholder',
-        url: '/base/placeholder'
-      },
-      {
-        name: 'Popovers',
-        url: '/base/popovers'
-      },
-      {
-        name: 'Progress',
-        url: '/base/progress'
-      },
-      {
-        name: 'Spinners',
-        url: '/base/spinners'
-      },
-      {
-        name: 'Tables',
-        url: '/base/tables'
-      },
-      {
-        name: 'Tabs',
-        url: '/base/tabs'
-      },
-      {
-        name: 'Tooltips',
-        url: '/base/tooltips'
+        name: 'Retrait',
+        url: '/base/cards'
       }
     ]
   },
   {
     name: 'Transférer',
     url: '/buttons',
-    icon: 'bi bi-pencil', // Bootstrap icon class
-    children: [
-      {
-        name: 'Buttons',
-        url: '/buttons/buttons'
-      },
-      {
-        name: 'Button groups',
-        url: '/buttons/button-groups'
-      },
-      {
-        name: 'Dropdowns',
-        url: '/buttons/dropdowns'
-      }
-    ]
+    iconComponent: { name: 'cil-cursor' }
   },
   {
-    name: 'Forms',
+    name: 'Demandes',
     url: '/forms',
-    icon: 'bi bi-pencil', // Bootstrap icon class
+    iconComponent: { name: 'cil-notes' },
     children: [
-      {
-        name: 'Form Control',
-        url: '/forms/form-control'
-      },
-      {
-        name: 'Select',
-        url: '/forms/select'
-      },
-      {
-        name: 'Checks & Radios',
-        url: '/forms/checks-radios'
-      },
-      {
-        name: 'Range',
-        url: '/forms/range'
-      },
       {
         name: 'Input Group',
         url: '/forms/input-group'
-      },
-      {
-        name: 'Floating Labels',
-        url: '/forms/floating-labels'
-      },
-      {
-        name: 'Layout',
-        url: '/forms/layout'
-      },
-      {
-        name: 'Validation',
-        url: '/forms/validation'
       }
     ]
   },
-  {
-    name: 'Charts',
-    url: '/charts',
-    icon: 'bi bi-pencil', // Bootstrap icon class
-  },
-  {
-    name: 'Icons',
-    icon: 'bi bi-pencil', // Bootstrap icon class
-    url: '/icons',
-    children: [
-      {
-        name: 'CoreUI Free',
-        url: '/icons/coreui-icons',
-        badge: {
-          color: 'success',
-          text: 'FREE'
-        }
-      },
-      {
-        name: 'CoreUI Flags',
-        url: '/icons/flags'
-      },
-      {
-        name: 'CoreUI Brands',
-        url: '/icons/brands'
-      }
-    ]
-  },
-  {
-    name: 'Notifications',
-    url: '/notifications',
-    icon: 'bi bi-pencil', // Bootstrap icon class
-    children: [
-      {
-        name: 'Alerts',
-        url: '/notifications/alerts'
-      },
-      {
-        name: 'Badges',
-        url: '/notifications/badges'
-      },
-      {
-        name: 'Modal',
-        url: '/notifications/modal'
-      },
-      {
-        name: 'Toast',
-        url: '/notifications/toasts'
-      }
-    ]
-  },
-  {
-    name: 'Widgets',
-    url: '/widgets',
-    icon: 'bi bi-pencil' // Bootstrap icon class
-  },
+
   {
     title: true,
     name: 'Gestion du flux de travail'
@@ -237,47 +99,6 @@ export const navItems: INavData[] = [
   {
     name: 'Blogues',
     url: '/login',
-    icon: 'bi bi-pencil' ,// Bootstrap icon class
-    children: [
-      {
-        name: 'Login',
-        url: '/login'
-      },
-      {
-        name: 'Register',
-        url: '/register'
-      },
-      {
-        name: 'Error 404',
-        url: '/404'
-      },
-      {
-        name: 'Error 500',
-        url: '/500'
-      }
-    ]
-  },
-  {
-    name: 'Communication',
-    url: '/login',
-    iconComponent: { name: 'cil-notes' },
-  },
-  {
-    title: true,
-    name: 'Links',
-    class: 'py-0'
-  },
-  {
-    name: 'Docs',
-    url: 'https://coreui.io/angular/docs/templates/installation',
-    icon: 'bi bi-pencil' , // Bootstrap icon class
-    attributes: { target: '_blank', class: '-text-dark' },
-    class: 'mt-auto'
-  },
-  {
-    name: 'Try CoreUI PRO',
-    url: 'https://coreui.io/product/angular-dashboard-template/',
-    icon: 'bi bi-pencil', // Bootstrap icon class
-    attributes: { target: '_blank' }
+    iconComponent: { name: 'cil-notes' }
   }
 ];
