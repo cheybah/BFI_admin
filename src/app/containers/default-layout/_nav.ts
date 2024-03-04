@@ -2,7 +2,7 @@ import { INavData } from '@coreui/angular';
 
 export const navItems: INavData[] = [
   {
-    name: 'Dashboard',
+    name: 'Tableau de bord',
     url: '/dashboard',
     icon: 'bi bi-speedometer2', // Bootstrap icon class
     badge: {
@@ -12,21 +12,41 @@ export const navItems: INavData[] = [
   },
   {
     title: true,
-    name: 'Theme'
+    name: 'Consultations'
   },
   {
-    name: 'Colors',
+    name: 'Clients',
     url: '/theme/colors',
     icon: 'bi bi-people-fill' // Bootstrap icon class
   },
   {
-    name: 'Typography',
+    name: 'Comptes',
+    url: '/theme/typography',
+    linkProps: { fragment: 'someAnchor' },
+    iconComponent: { name: 'cil-pencil' },
+    children: [
+      {
+        name: 'Listes',
+        url: '/base/accordion'
+      },
+      {
+        name: 'Types',
+        url: '/base/carousel'
+      },
+      {
+        name: 'Services',
+        url: '/base/collapse'
+      }  
+    ]
+  },
+  {
+    name: 'Employées',
     url: '/theme/typography',
     linkProps: { fragment: 'someAnchor' },
     icon: 'bi bi-building-fill' // Bootstrap icon class
   },
   {
-    name: 'Components',
+    name: 'Opérations bancaires',
     title: true
   },
   {
@@ -97,7 +117,7 @@ export const navItems: INavData[] = [
     ]
   },
   {
-    name: 'Buttons',
+    name: 'Transférer',
     url: '/buttons',
     icon: 'bi bi-pencil', // Bootstrap icon class
     children: [
@@ -212,10 +232,10 @@ export const navItems: INavData[] = [
   },
   {
     title: true,
-    name: 'Extras'
+    name: 'Gestion du flux de travail'
   },
   {
-    name: 'Pages',
+    name: 'Blogues',
     url: '/login',
     icon: 'bi bi-pencil' ,// Bootstrap icon class
     children: [
@@ -236,6 +256,11 @@ export const navItems: INavData[] = [
         url: '/500'
       }
     ]
+  },
+  {
+    name: 'Communication',
+    url: '/login',
+    iconComponent: { name: 'cil-notes' },
   },
   {
     title: true,
