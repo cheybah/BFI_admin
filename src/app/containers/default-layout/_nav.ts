@@ -4,8 +4,11 @@ export const navItems: INavData[] = [
   {
     name: 'Tableau de bord',
     url: '/dashboard',
-    iconComponent: { name: 'cil-speedometer' },
-   
+    icon: 'bi bi-speedometer2', // Bootstrap icon class
+    badge: {
+      color: 'info',
+      text: '2+'
+    }
   },
   {
     title: true,
@@ -14,13 +17,7 @@ export const navItems: INavData[] = [
   {
     name: 'Clients',
     url: '/theme/colors',
-    iconComponent: { name: 'cil-people' }
-  },
-  {
-    name: 'Agences',
-    url: '/theme/typography',
-    linkProps: { fragment: 'someAnchor' },
-    iconComponent: { name: 'cilBuilding' }
+    icon: 'bi bi-people-fill' // Bootstrap icon class
   },
   {
     name: 'Comptes',
@@ -46,7 +43,7 @@ export const navItems: INavData[] = [
     name: 'Employées',
     url: '/theme/typography',
     linkProps: { fragment: 'someAnchor' },
-    iconComponent: { name: 'cil-user' }
+    icon: 'bi bi-building-fill' // Bootstrap icon class
   },
   {
     name: 'Opérations bancaires',
@@ -55,7 +52,7 @@ export const navItems: INavData[] = [
   {
     name: 'Base',
     url: '/base',
-    iconComponent: { name: 'cil-puzzle' },
+    icon: 'bi bi-pencil' ,// Bootstrap icon class
     children: [
       {
         name: 'Accordion',
@@ -122,7 +119,7 @@ export const navItems: INavData[] = [
   {
     name: 'Transférer',
     url: '/buttons',
-    iconComponent: { name: 'cil-cursor' },
+    icon: 'bi bi-pencil', // Bootstrap icon class
     children: [
       {
         name: 'Buttons',
@@ -141,7 +138,7 @@ export const navItems: INavData[] = [
   {
     name: 'Forms',
     url: '/forms',
-    iconComponent: { name: 'cil-notes' },
+    icon: 'bi bi-pencil', // Bootstrap icon class
     children: [
       {
         name: 'Form Control',
@@ -180,11 +177,11 @@ export const navItems: INavData[] = [
   {
     name: 'Charts',
     url: '/charts',
-    iconComponent: { name: 'cil-chart-pie' }
+    icon: 'bi bi-pencil', // Bootstrap icon class
   },
   {
     name: 'Icons',
-    iconComponent: { name: 'cil-star' },
+    icon: 'bi bi-pencil', // Bootstrap icon class
     url: '/icons',
     children: [
       {
@@ -208,7 +205,7 @@ export const navItems: INavData[] = [
   {
     name: 'Notifications',
     url: '/notifications',
-    iconComponent: { name: 'cil-bell' },
+    icon: 'bi bi-pencil', // Bootstrap icon class
     children: [
       {
         name: 'Alerts',
@@ -231,7 +228,7 @@ export const navItems: INavData[] = [
   {
     name: 'Widgets',
     url: '/widgets',
-    iconComponent: { name: 'cil-calculator' },
+    icon: 'bi bi-pencil' // Bootstrap icon class
   },
   {
     title: true,
@@ -240,7 +237,7 @@ export const navItems: INavData[] = [
   {
     name: 'Blogues',
     url: '/login',
-    iconComponent: { name: 'cil-notes' },
+    icon: 'bi bi-pencil' ,// Bootstrap icon class
     children: [
       {
         name: 'Login',
@@ -273,14 +270,14 @@ export const navItems: INavData[] = [
   {
     name: 'Docs',
     url: 'https://coreui.io/angular/docs/templates/installation',
-    iconComponent: { name: 'cil-description' },
+    icon: 'bi bi-pencil' , // Bootstrap icon class
     attributes: { target: '_blank', class: '-text-dark' },
     class: 'mt-auto'
   },
   {
     name: 'Try CoreUI PRO',
     url: 'https://coreui.io/product/angular-dashboard-template/',
-    iconComponent: { name: 'cil-layers' },
+    icon: 'bi bi-pencil', // Bootstrap icon class
     attributes: { target: '_blank' }
   }
 ];
