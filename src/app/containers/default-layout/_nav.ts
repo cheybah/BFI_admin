@@ -4,8 +4,7 @@ export const navItems: INavData[] = [
   {
     name: 'Tableau de bord',
     url: '/dashboard',
-    iconComponent: { name: 'cil-speedometer' },
-   
+    icon: 'bi bi-speedometer2', 
   },
   {
     title: true,
@@ -14,31 +13,34 @@ export const navItems: INavData[] = [
   {
     name: 'Clients',
     url: '/theme/colors',
-    iconComponent: { name: 'cil-people' }
+    icon: 'bi bi-people', 
   },
   {
     name: 'Agences',
     url: '/theme/typography',
     linkProps: { fragment: 'someAnchor' },
-    iconComponent: { name: 'cilBuilding' }
+    icon: 'bi bi-building', 
   },
   {
     name: 'Comptes',
     url: '/theme/typography',
     linkProps: { fragment: 'someAnchor' },
-    iconComponent: { name: 'cil-pencil' },
+    icon: 'bi bi-cash-stack', 
     children: [
       {
         name: 'Listes',
-        url: '/base/accordion'
+        url: '/base/accordion',
+        icon: 'bi bi-list-ul'
       },
       {
         name: 'Types',
-        url: '/base/carousel'
+        url: '/base/carousel',
+        icon: 'bi bi-file-earmark'
       },
       {
         name: 'Services',
-        url: '/base/collapse'
+        url: '/base/collapse',
+        icon: 'bi bi-gear'
       }  
     ]
   },
@@ -46,7 +48,7 @@ export const navItems: INavData[] = [
     name: 'Employées',
     url: '/theme/typography',
     linkProps: { fragment: 'someAnchor' },
-    iconComponent: { name: 'cil-user' }
+    icon: 'bi bi-people-fill', 
   },
   {
     name: 'Opérations bancaires',
@@ -55,35 +57,39 @@ export const navItems: INavData[] = [
   {
     name: 'Opérations monétaires',
     url: '/base',
-    iconComponent: { name: 'cil-puzzle' },
+    icon: 'bi bi-cash-coin',
     children: [
       {
         name: 'Encaissement',
-        url: '/base/cards'
+        url: '/base/cards',
+        icon: 'bi bi-cash',
       },
       {
         name: 'Virement',
-        url: '/base/cards'
+        url: '/base/cards',
+        icon: 'bi bi-arrow-right-short',
       },
       {
         name: 'Versement',
-        url: '/base/cards'
+        url: '/base/cards',
+        icon: 'bi bi-arrow-left-short',
       },
       {
         name: 'Retrait',
-        url: '/base/cards'
+        url: '/base/cards',
+        icon: 'bi bi-currency-dollar',
       }
     ]
   },
   {
     name: 'Transférer',
     url: '/buttons',
-    iconComponent: { name: 'cil-cursor' }
+    icon: 'bi bi-cursor',
   },
   {
     name: 'Demandes',
     url: '/forms',
-    iconComponent: { name: 'cil-notes' },
+    icon: 'bi bi-file-earmark-text', 
     children: [
       {
         name: 'Input Group',
@@ -99,6 +105,6 @@ export const navItems: INavData[] = [
   {
     name: 'Blogues',
     url: '/login',
-    iconComponent: { name: 'cil-notes' }
+    icon: 'bi bi-journal', 
   }
 ];
