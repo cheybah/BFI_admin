@@ -7,28 +7,62 @@
             <form cForm>
               <h1>Register</h1>
               <p class="text-medium-emphasis">Create your account</p>
-              <c-input-group class="mb-3">
-                <span cInputGroupText>
-                  <svg cIcon name="cilUser"></svg>
-                </span>
-                <input autoComplete="name" cFormControl placeholder="Username" />
-              </c-input-group>
+              
+              <!-- First Name and Last Name Input Fields -->
+              <div class="d-flex mb-3">
+                <c-input-group class="me-2">
+                  <span cInputGroupText>
+                    <i class="bi bi-person-fill"></i>
+                  </span>
+                  <input autoComplete="given-name" cFormControl placeholder="First Name" />
+                </c-input-group>
+                <c-input-group>
+                  <span cInputGroupText>
+                    <i class="bi bi-person-fill"></i>
+                  </span>
+                  <input autoComplete="family-name" cFormControl placeholder="Last Name" />
+                </c-input-group>
+              </div>
+              
+              <!-- Email Input Field -->
               <c-input-group class="mb-3">
                 <span cInputGroupText>&#64;</span>
                 <input autoComplete="email" cFormControl placeholder="Email" />
               </c-input-group>
-              <c-input-group class="mb-3">
-                <span cInputGroupText>
-                  <svg cIcon name="cilLockLocked"></svg>
-                </span>
-                <input autoComplete="new-password" cFormControl placeholder="Password" type="password" />
-              </c-input-group>
+              
+              <!-- Username and Password Input Fields -->
+              <div class="d-flex mb-3">
+                <c-input-group class="me-2">
+                  <span cInputGroupText>
+                    <i class="bi bi-person-fill"></i>
+                  </span>
+                  <input autoComplete="name" cFormControl placeholder="Username" />
+                </c-input-group>
+                <c-input-group>
+                  <span cInputGroupText>
+                    <i class="bi bi-eye-fill" (click)="togglePasswordVisibility($event)"></i>
+                  </span>
+                  <input autoComplete="new-password" cFormControl placeholder="Password" type="password" #passwordInput />
+                </c-input-group>
+              </div>
+              
+              <!-- Role Dropdown Field -->
               <c-input-group class="mb-4">
                 <span cInputGroupText>
-                  <svg cIcon name="cilLockLocked"></svg>
+                  <i class="bi bi-person-fill-gear"></i>
                 </span>
-                <input autoComplete="new-password" cFormControl placeholder="Repeat password" type="password" />
+                <select cFormControl class="form-control custom-placeholder ">
+                  <option value="" disabled selected>Role Assigné</option>
+                  <option value="writer">Writer</option>
+                  <option value="tech-support">Tech Support</option>
+                  <option value="marketing">Marketing</option>
+                </select>
+                <div class="arrow-icon position-absolute">
+                  <i class="bi bi-arrow-down-circle"></i> 
+                </div>
               </c-input-group>
+              
+              <!-- Create Account Button -->
               <div class="d-grid">
                 <button cButton color="success">Create Account</button>
               </div>
