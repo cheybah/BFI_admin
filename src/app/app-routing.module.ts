@@ -62,7 +62,7 @@ const routes: Routes = [
     component: LoginComponent,
     data: {
       title: 'Login Page'
-    }
+    } 
   },
   {
     path: 'register',
@@ -75,12 +75,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, {
-      scrollPositionRestoration: 'top',
-      anchorScrolling: 'enabled',
-      initialNavigation: 'enabledBlocking'
-      // relativeLinkResolution: 'legacy'
-    })
+    RouterModule.forRoot(routes)
   ],
   exports: [RouterModule]
 })

@@ -1,0 +1,53 @@
+.btn-primary {
+    --cui-btn-color: rgba(255, 255, 255, 0.87) !important;
+    --cui-btn-bg: #8f7215 !important;
+    --cui-btn-border-color: #8f7215 !important;
+    --cui-btn-hover-color: rgba(255, 255, 255, 0.87) !important;
+    --cui-btn-hover-bg: #d7ba5b !important;
+    --cui-btn-hover-border-color: #d7ba5b !important;
+    --cui-btn-focus-shadow-rgb: 75, 58, 223 !important;
+    --cui-btn-active-color: #8f7215 !important;
+    --cui-btn-active-bg: #ffffff !important;
+    --cui-btn-active-border-color: #ffffff !important;
+}
+
+.bg-primary {
+    --cui-bg-opacity: 1;
+    background-color: #8f7215 !important;
+    position: relative !important; /* Ensure positioning context for pseudo-element */
+
+}
+
+  
+.bg-primary::before {
+    content: "\f024" !important; /* Unicode for the flag icon */
+    font-family: "Bootstrap Icons" !important; /* Ensure the correct font family for the icon */
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    font-size: 100px !important; /* Adjust icon size as needed */
+    opacity: 0.2 !important; /* Adjust opacity */
+    z-index: -1 !important; /* Ensure icon is behind the content */
+  }
+
+  .centered {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px; /* Adjust margin-top as needed */
+  }
+  
+  .bi-eye-fill,
+.bi-eye-slash-fill {
+  cursor: pointer;
+}
+
+.btn-link {
+    --cui-btn-color: #302f2f !important;
+    --cui-btn-hover-color: #8f7215 !important ;
+}
+
+.reg{
+  --cui-btn-color: #8f7215 !important;
+  --cui-btn-bg: white !important;
+}

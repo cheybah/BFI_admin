@@ -1,18 +1,16 @@
 import { NgModule } from '@angular/core';
+
 import {LocationStrategy, PathLocationStrategy } from '@angular/common';
+
 import { BrowserModule, Title } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { NgScrollbarModule } from 'ngx-scrollbar';
-
-// Import routing module
 import { AppRoutingModule } from './app-routing.module';
-
-// Import app component
 import { AppComponent } from './app.component';
+import { HttpClientModule } from '@angular/common/http';
 
-// Import containers
 import { DefaultFooterComponent, DefaultHeaderComponent, DefaultLayoutComponent } from './containers';
 
 import {
@@ -29,6 +27,7 @@ import {
   HeaderModule,
   ListGroupModule,
   NavModule,
+  
   ProgressModule,
   SharedModule,
   SidebarModule,
@@ -74,13 +73,16 @@ const APP_CONTAINERS = [
     BadgeModule,
     ListGroupModule,
     CardModule,
-    NgScrollbarModule
+    NgScrollbarModule,
+    HttpClientModule
   ],
   providers: [
+
     {
       provide: LocationStrategy,
       useClass: PathLocationStrategy
     },
+
     IconSetService,
     Title
   ],

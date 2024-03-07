@@ -1,14 +1,6 @@
 {
-  "name": "coreui-free-angular-admin-template",
-  "version": "4.7.15",
-  "copyright": "Copyright 2024 creativeLabs Łukasz Holeczek",
-  "license": "MIT",
-  "author": "The CoreUI Team (https://github.com/orgs/coreui/people) and contributors",
-  "homepage": "https://coreui.io/angular",
-  "config": {
-    "coreui_library_short_version": "4.7",
-    "coreui_library_docs_url": "https://coreui.io/angular/docs/"
-  },
+  "name": "banque-bfi-admin",
+  "version": "0.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -35,6 +27,7 @@
     "@coreui/icons": "^3.0.1",
     "@coreui/icons-angular": "~4.7.14",
     "@coreui/utils": "^2.0.2",
+    "axios": "^1.6.7",
     "bootstrap-icons": "^1.11.3",
     "chart.js": "^3.9.1",
     "lodash-es": "^4.17.21",

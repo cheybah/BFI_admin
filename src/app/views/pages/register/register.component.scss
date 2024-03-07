@@ -1,0 +1,26 @@
+.arrow-icon {
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+
+  .bi-eye-fill,
+  .bi-eye-slash-fill {
+    cursor: pointer;
+  }
+
+  .custom-placeholder{
+    cursor: pointer;
+  }
+
+  .btn-success {
+    --cui-btn-color: #fbfbfb;
+    --cui-btn-bg: #8f7215;
+    --cui-btn-border-color: #8f7215;
+    --cui-btn-hover-color: rgb(19 24 30 / 95%);
+    --cui-btn-hover-bg: #d7ba5b;
+    --cui-btn-hover-border-color: #d7ba5b;
+    --cui-btn-focus-shadow-rgb: 39, 156, 81;
+    --cui-btn-active-color: rgba(18, 20, 22, 0.95);
+  }

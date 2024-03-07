@@ -1,41 +1,86 @@
 <div class="bg-light min-vh-100 d-flex flex-row align-items-center">
-  <c-container>
-    <c-row class="justify-content-center">
-      <c-col lg="7" md="9" xl="6">
-        <c-card class="mx-4">
-          <c-card-body class="p-4">
-            <form cForm>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="card">
+          <div class="card-body p-4">
+            <form (ngSubmit)="registerUser(registerForm.value)" #registerForm="ngForm">
               <h1>Register</h1>
               <p class="text-medium-emphasis">Create your account</p>
-              <c-input-group class="mb-3">
-                <span cInputGroupText>
-                  <svg cIcon name="cilUser"></svg>
-                </span>
-                <input autoComplete="name" cFormControl placeholder="Username" />
-              </c-input-group>
-              <c-input-group class="mb-3">
-                <span cInputGroupText>&#64;</span>
-                <input autoComplete="email" cFormControl placeholder="Email" />
-              </c-input-group>
-              <c-input-group class="mb-3">
-                <span cInputGroupText>
-                  <svg cIcon name="cilLockLocked"></svg>
-                </span>
-                <input autoComplete="new-password" cFormControl placeholder="Password" type="password" />
-              </c-input-group>
-              <c-input-group class="mb-4">
-                <span cInputGroupText>
-                  <svg cIcon name="cilLockLocked"></svg>
-                </span>
-                <input autoComplete="new-password" cFormControl placeholder="Repeat password" type="password" />
-              </c-input-group>
+              
+              <!-- First Name and Last Name Input Fields -->
+              <div class="row mb-3">
+                <div class="col">
+                  <div class="input-group">
+                    <span class="input-group-text">
+                      <i class="bi bi-person-fill"></i>
+                    </span>
+                    <input id="firstName" placeholder="First Name" [(ngModel)]="firstName" name="firstName" type="text" class="form-control"/>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="input-group">
+                    <span class="input-group-text">
+                      <i class="bi bi-person-fill"></i>
+                    </span>
+                    <input id="lastName" placeholder="Last Name" [(ngModel)]="lastName" name="lastName" type="text" class="form-control"/>        
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Email Input Field -->
+              <div class="mb-3">
+                <div class="input-group">
+                  <span class="input-group-text">
+                    <i class="bi bi-envelope-at-fill"></i>
+                  </span>
+                  <input id="email" placeholder="Email" [(ngModel)]="email" name="email" type="email" class="form-control"/>        
+                </div>
+              </div>
+              
+              <!-- Username and Password Input Fields -->
+              <div class="row mb-3">
+                <div class="col">
+                  <div class="input-group">
+                    <span class="input-group-text">
+                      <i class="bi bi-person-fill"></i>
+                    </span>
+                    <input id="login" placeholder="Username" [(ngModel)]="login" name="login" type="text" class="form-control"/>        
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="input-group">
+                    <span class="input-group-text">
+                      <i class="bi bi-eye-fill" (click)="togglePasswordVisibility($event)"></i>
+                    </span>
+                    <input id="password" placeholder="Password" type="password" [(ngModel)]="password" name="password" #passwordInput class="form-control"/>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Role Dropdown Field -->
+              <div class="mb-4">
+                <div class="input-group">
+                  <span class="input-group-text">
+                    <i class="bi bi-person-fill-gear"></i>
+                  </span>
+                  <select id="role" name="role" [(ngModel)]="role" class="form-control custom-placeholder form-select" required>
+                    <option value="" disabled selected>Role Assigné</option>
+                    <option value="WRITER">Writer</option>
+                    <option value="TECH_SUPPORT">Tech Support</option>
+                    <option value="MARKETING">Marketing</option>
+                  </select>
+                </div>
+              </div>
+              
+              <!-- Create Account Button -->
               <div class="d-grid">
-                <button cButton color="success">Create Account</button>
+                <button class="btn btn-success" type="submit">Create Account</button>
               </div>
             </form>
-          </c-card-body>
-        </c-card>
-      </c-col>
-    </c-row>
-  </c-container>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
