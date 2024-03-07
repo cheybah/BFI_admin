@@ -25,11 +25,6 @@ const routes: Routes = [
         loadChildren: () =>
           import('./views/dashboard/dashboard.module').then((m) => m.DashboardModule)
       },
-     // {
-       // path: 'base',
-       // loadChildren: () =>
-      //    import('./views/base/base.module').then((m) => m.BaseModule)
- //     },
       {
         path: 'pages',
         loadChildren: () =>
@@ -56,7 +51,7 @@ const routes: Routes = [
     component: LoginComponent,
     data: {
       title: 'Login Page'
-    }
+    } 
   },
   {
     path: 'register',
@@ -70,12 +65,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, {
-      scrollPositionRestoration: 'top',
-      anchorScrolling: 'enabled',
-      initialNavigation: 'enabledBlocking'
-      // relativeLinkResolution: 'legacy'
-    })
+    RouterModule.forRoot(routes)
   ],
   exports: [RouterModule]
 })

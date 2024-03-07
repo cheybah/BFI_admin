@@ -1,4 +1,8 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
+import { AxiosService } from '../../../services/axios.service';
+import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
+
 
 @Component({
   selector: 'app-login',
@@ -7,15 +11,46 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 })
 export class LoginComponent  implements OnInit {
 
+  @Output() onSubmitLoginEvent = new EventEmitter();
+  @Output() loginEvent = new EventEmitter();
+
   @ViewChild('passwordInput') passwordInput!: ElementRef;
 
   isPasswordVisible = false;
 
-  constructor(private elementRef: ElementRef) { }
+  login: string ="";
+  password: string="";
+  authenticationError = false; // Add this variable for authentication error
+
+  constructor(private elementRef: ElementRef,
+    private axiosService: AxiosService,
+    private router: Router) { }
 
   ngOnInit(): void {
     this.scatterIcons();
   }
+
+
+  onSubmitLogin(): void {
+    console.log('Sending JSON object:', NgForm); // Log the JSON object before sending
+    this.axiosService.request(
+      "POST",
+      "/login",
+      { login: this.login, password: this.password }
+    ).then(
+      (response: any) => {
+        this.router.navigate(['/500']);
+      }
+    ).catch(error => {
+      if (error.response && error.response.status === 401) {
+        console.error('Unauthorized: Invalid credentials');
+      } else {
+        console.error('Login failed:', error);
+        // Handle other error cases (network issues, server errors, etc.)
+      }
+    });
+  }
+
 
   togglePasswordVisibility(event: MouseEvent) {
     this.isPasswordVisible = !this.isPasswordVisible;
@@ -33,7 +68,7 @@ export class LoginComponent  implements OnInit {
       const cardWidth = (bgPrimaryElement as HTMLElement).offsetWidth;
       const cardHeight = (bgPrimaryElement as HTMLElement).offsetHeight;
 
-      const numIcons = 43; // Number of icons you want
+      const numIcons = 34; // Number of icons you want
       const iconSize = 25; // Size of the icon
 
       for (let i = 0; i < numIcons; i++) {
