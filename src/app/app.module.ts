@@ -1,4 +1,7 @@
 import { NgModule } from '@angular/core';
+
+import {LocationStrategy, PathLocationStrategy } from '@angular/common';
+
 import { BrowserModule, Title } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -33,6 +36,7 @@ import {
 } from '@coreui/angular';
 
 import { IconModule, IconSetService } from '@coreui/icons-angular';
+import { HttpClientModule } from '@angular/common/http';
 
 const APP_CONTAINERS = [
   DefaultFooterComponent,
@@ -56,6 +60,7 @@ const APP_CONTAINERS = [
     IconModule,
     NavModule,
     ButtonModule,
+    HttpClientModule,
     FormModule,
     UtilitiesModule,
     ButtonGroupModule,
@@ -72,6 +77,12 @@ const APP_CONTAINERS = [
     HttpClientModule
   ],
   providers: [
+
+    {
+      provide: LocationStrategy,
+      useClass: PathLocationStrategy
+    },
+
     IconSetService,
     Title
   ],

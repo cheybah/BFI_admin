@@ -17,7 +17,7 @@ import { FormsModule } from '@angular/forms'; // Import FormsModule
     LoginComponent,
     RegisterComponent,
     Page404Component,
-    Page500Component
+    Page500Component,
   ],
   imports: [
     CommonModule,

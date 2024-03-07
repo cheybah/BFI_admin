@@ -1,0 +1,66 @@
+
+<div class="fade-in">
+        <c-card-body>
+            <c-row>
+                <c-col xs>
+                    <c-card class="mb-4">
+                        <c-card-header>Clients</c-card-header>
+                        <c-card-body>
+                            <table
+                                [hover]="true"
+                                [responsive]="true"
+                                [striped]="true"
+                                align="middle"
+                                cTable
+                                class="mb-0 border"
+                            >
+                                <thead cTableColor="light">
+                                    <tr>
+                                        <th class="text-center">
+                                            <svg cIcon name="cilPeople"></svg>
+                                        </th>
+                                        <th>Client</th>
+                                       <!--<th class="text-center">Ville</th>-->
+                                        <th>Id</th>
+                                        <th>Genre</th>
+                                        <th>Email</th>
+                                        <th class="text-center">Adresse</th>
+                                        <th>Phone Number</th>
+                                        <th>Edit</th>
+                                        <th>Delete<th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let user of users; index as i">
+                                        <td class="text-center">
+                                            <c-avatar
+                                                size="md"
+                                                src="{{ user.photo }}" 
+                                                status="{{ user.gender }}" 
+                                            ></c-avatar>
+                                        </td>
+                                        <td>
+                                            <div>{{ user.firstName }} {{ user.lastName }}</div> <!-- Utilisez les propriétés firstName et lastName -->
+                                            <div class="small text-medium-emphasis text-nowrap">
+                                                <span>
+                                                    {{ user.state }} | Registered: {{ user.registered }}
+                                                </span>
+                                            </div>
+                                        </td>
+                                      <!-- <td class="text-center">{{ user.address.city }}</td> --> 
+                                        <td>{{ user.id }}</td>
+                                        <td>{{ user.gender }}</td>
+                                        <td>{{ user.email }}</td>
+                                        <td class="text-center">{{ user.address}}</td> <!-- Utilisez la propriété street de l'adresse -->
+                                        <td>{{ user.phoneNumber }}</td>
+                                        <td><a href="#" (click)="editUser(user)"><i class="bi bi-pencil-square"></i></a></td>
+                                        <td><a href="#" (click)="deleteUser(user.id)"><i class="bi bi-trash"></i></a></td>                                        
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </c-card-body>
+                    </c-card>
+                </c-col>
+            </c-row>
+        </c-card-body>
+</div>

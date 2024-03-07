@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { DefaultLayoutComponent } from './containers';
@@ -6,6 +6,8 @@ import { Page404Component } from './views/pages/page404/page404.component';
 import { Page500Component } from './views/pages/page500/page500.component';
 import { LoginComponent } from './views/pages/login/login.component';
 import { RegisterComponent } from './views/pages/register/register.component';
+import { ClientsComponent } from './views/pages/clients/clients.component';
+import { BlogsComponent } from './views/pages/blogs/blogs.component';
 
 const routes: Routes = [
   {
@@ -30,8 +32,17 @@ const routes: Routes = [
         loadChildren: () =>
           import('./views/pages/pages.module').then((m) => m.PagesModule)
       },
+      {
+        path: 'clients',
+        component : ClientsComponent,    
+      },
+      {
+        path: 'blogs',
+        component : BlogsComponent,    
+      },
     ]
   },
+
   {
     path: '404',
     component: Page404Component,
@@ -59,8 +70,7 @@ const routes: Routes = [
     data: {
       title: 'Register Page'
     }
-  },
-  {path: '**', redirectTo: 'dashboard'}
+  }
 ];
 
 @NgModule({
