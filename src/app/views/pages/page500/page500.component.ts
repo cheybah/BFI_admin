@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { AxiosService } from '../../../services/axios.service';
+
 
 @Component({
   selector: 'app-page500',
@@ -7,6 +9,8 @@ import { Component } from '@angular/core';
 })
 export class Page500Component {
 
-  constructor() { }
+
+
+  constructor() {}
 
 }
