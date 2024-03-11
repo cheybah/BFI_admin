@@ -8,6 +8,7 @@ import { LoginComponent } from './views/pages/login/login.component';
 import { RegisterComponent } from './views/pages/register/register.component';
 import { ClientsComponent } from './views/pages/clients/clients.component';
 import { BlogsComponent } from './views/pages/blogs/blogs.component';
+import { ProfileComponent } from './views/pages/profile/profile.component';
 
 const routes: Routes = [
   {
@@ -69,6 +70,13 @@ const routes: Routes = [
     component: RegisterComponent,
     data: {
       title: 'Register Page'
+    }
+  },
+  {
+    path: 'profile',
+    component: ProfileComponent,
+    data: {
+      title: 'profile Page'
     }
   }
 ];

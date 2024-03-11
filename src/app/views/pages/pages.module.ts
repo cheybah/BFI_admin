@@ -8,12 +8,13 @@ import { Page500Component } from './page500/page500.component';
 import { ButtonModule, CardModule, FormModule, GridModule } from '@coreui/angular';
 import { IconModule } from '@coreui/icons-angular';
 import { FormsModule } from '@angular/forms'; // Import FormsModule
-
+import { BlogsComponent } from './blogs/blogs.component';
 
 
 
 @NgModule({
   declarations: [
+    BlogsComponent,
     LoginComponent,
     RegisterComponent,
     Page404Component,
@@ -28,7 +29,7 @@ import { FormsModule } from '@angular/forms'; // Import FormsModule
     IconModule,
     FormsModule,
     FormModule
-  ],
+],
   providers: []
 })
 export class PagesModule {

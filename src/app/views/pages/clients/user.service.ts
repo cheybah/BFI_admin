@@ -7,7 +7,10 @@ import { IUser } from './clients.component';
   providedIn: 'root'
 })
 export class UserService {
-  deleteUser(userId: string) {
+  
+  deleteUser(userId: number): Observable<void> {
+    const deleteUrl = `${this.apiUrl}/${userId}`;
+    return this.http.delete<void>(deleteUrl);
   }
   private readonly apiUrl = 'http://localhost:8080/users'; // Mettez l'URL correcte de votre backend
 
