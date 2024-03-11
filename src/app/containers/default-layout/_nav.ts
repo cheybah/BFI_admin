@@ -95,7 +95,7 @@ export const navItems: INavData[] = [
   },
   {
     name: 'Blogues',
-    url: '/blogues',
+    url: '/blogs',
     icon: 'bi bi-journal', 
   }
 ];

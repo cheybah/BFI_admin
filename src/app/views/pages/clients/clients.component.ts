@@ -2,6 +2,7 @@ import { Component, OnInit, SchemaMetadata } from '@angular/core';
 import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { DashboardChartsData, IChartProps } from '../../dashboard/dashboard-charts-data';
 import {UserService} from './user.service';
+import { Router } from '@angular/router';
 export interface IUser {
   firstName: string;
   lastName: string;
@@ -43,12 +44,34 @@ export class ClientsComponent implements OnInit {
     // Implement your edit logic here
   }
 
-  deleteUser(userId: number) {
-
+  loadUsers(): void {
+    this.userService.getAllUsers().subscribe(
+      users => {
+        this.users = users;
+      },
+      error => {
+        console.error('Une erreur est survenue lors de la récupération des utilisateurs :', error);
+      }
+    );
   }
-  
+  deleteUser(userId: number): void {
+    this.userService.deleteUser(userId).subscribe(
+      () => {
+        // Suppression réussie, rechargez la liste des utilisateurs
+        this.router.navigate(['/clients']); // Naviguer vers la même route après la suppression
+        this.loadUsers();
+
+      },
+      error => {
+        console.error('Une erreur est survenue lors de la suppression de l\'utilisateur :', error);
+
+      }
+    );
+  }
   constructor(private chartsData: DashboardChartsData,
-    private userService: UserService) {
+    private userService: UserService,
+    private router: Router // Injecter le Router dans le constructeur
+    ) {
   }
   public users: IUser[] = [];
 
@@ -67,6 +90,12 @@ export class ClientsComponent implements OnInit {
     this.trafficRadioGroup.setValue({ trafficRadio: value });
     this.chartsData.initMainChart(value);
     this.initCharts();
+  }
+  getUserPhoto(photoUrl: string): string {
+    // Extraire le nom de fichier de l'URL photo
+    const filename = photoUrl.substring(photoUrl.lastIndexOf('\\') + 1);
+    // Construire le chemin d'accès à l'image à partir du nom de fichier
+    return `assets/img/avatars/${filename}`;
   }
 }
 

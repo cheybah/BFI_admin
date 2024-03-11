@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 
-import {LocationStrategy, PathLocationStrategy } from '@angular/common';
+import {CommonModule, LocationStrategy, PathLocationStrategy } from '@angular/common';
 
 import { BrowserModule, Title } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { NgScrollbarModule } from 'ngx-scrollbar';
 import { AppRoutingModule } from './app-routing.module';
@@ -27,16 +27,15 @@ import {
   HeaderModule,
   ListGroupModule,
   NavModule,
-  
   ProgressModule,
   SharedModule,
   SidebarModule,
   TabsModule,
-  UtilitiesModule
+  UtilitiesModule,
+  
 } from '@coreui/angular';
 
 import { IconModule, IconSetService } from '@coreui/icons-angular';
-import { HttpClientModule } from '@angular/common/http';
 
 const APP_CONTAINERS = [
   DefaultFooterComponent,
@@ -74,7 +73,10 @@ const APP_CONTAINERS = [
     ListGroupModule,
     CardModule,
     NgScrollbarModule,
-    HttpClientModule
+    HttpClientModule,
+    CommonModule,
+    FormsModule, // Add FormsModule here
+
   ],
   providers: [
 
