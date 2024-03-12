@@ -1,6 +1,6 @@
 import { INavData } from '@coreui/angular';
 
-export const navItems: INavData[] = [
+export const adminNavItems: INavData[] = [
   {
     name: 'Tableau de bord',
     url: '/dashboard',
@@ -98,4 +98,53 @@ export const navItems: INavData[] = [
     url: '/blogs',
     icon: 'bi bi-journal', 
   }
+];
+
+export const writerNavItems: INavData[] = [
+  {
+    name: 'Tableau de bord',
+    icon: 'bi bi-speedometer2', 
+  },
+  {
+    name: 'Blogs',
+    title: true
+  },
+  {
+    name: 'Flux de travail',
+    url: '/',
+    icon: 'bi bi-substack',
+    children: [
+      {
+        name: 'Ajouter un nouveau blog',
+        url: '/',
+        icon: 'bi bi-journal-plus',
+      },
+      {
+        name: 'Catégoires', 
+        url: '/',
+        icon: 'bi bi-tags-fill',
+      },
+      {
+        name: 'Media',
+        url: '/',
+        icon: 'bi bi-collection-fill',
+      }
+    ]
+  },
+  {
+    name: 'Commentaires',
+    url: '/',
+    icon: 'bi bi-chat-quote-fill', 
+  },
+  {
+    name: 'A Faire',
+    title: true
+  },
+  {
+    name: 'Consulter la liste',
+    url: '/writer-dash/kanban',
+    icon: 'bi bi-check2-circle', 
+  },
+
+
 ];

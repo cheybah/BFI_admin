@@ -54,7 +54,7 @@ export class WidgetsBrandComponent implements AfterContentInit {
   };
   brandData = [
     {
-      icon: 'cibFacebook',
+      icon: '',
       values: [{ title: 'friends', value: '89K' }, { title: 'feeds', value: '459' }],
       capBg: { '--cui-card-cap-bg': '#3b5998' },
       labels: [...this.labels],
@@ -64,7 +64,7 @@ export class WidgetsBrandComponent implements AfterContentInit {
       }
     },
     {
-      icon: 'cibTwitter',
+      icon: '',
       values: [{ title: 'followers', value: '973k' }, { title: 'tweets', value: '1.792' }],
       capBg: { '--cui-card-cap-bg': '#00aced' },
       data: {
@@ -73,7 +73,7 @@ export class WidgetsBrandComponent implements AfterContentInit {
       }
     },
     {
-      icon: 'cib-linkedin',
+      icon: '',
       values: [{ title: 'contacts', value: '500' }, { title: 'feeds', value: '1.292' }],
       capBg: { '--cui-card-cap-bg': '#4875b4' },
       data: {

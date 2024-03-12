@@ -12,13 +12,13 @@ import {
   ProgressModule,
   TableModule,
   TabsModule
-} from '@coreui/angular';
-import { IconModule } from '@coreui/icons-angular';
+} 
+
+from '@coreui/angular';
 import { ChartjsModule } from '@coreui/angular-chartjs';
-
 import { DashboardRoutingModule } from './dashboard-routing.module';
-import { DashboardComponent } from './dashboard.component';
-
+import { DashboardComponent } from './admin-dash/dashboard.component';
+import { WriterDashComponent } from './writer-dash/writer-dash.component';
 import { WidgetsModule } from '../widgets/widgets.module';
 import { CardModule } from '@coreui/angular';
 
@@ -29,7 +29,6 @@ import {ClientsComponent} from '../pages/clients/clients.component'
     DashboardRoutingModule,
     CardModule,
     NavModule,
-    IconModule,
     TabsModule,
     CommonModule,
     GridModule,
@@ -44,9 +43,11 @@ import {ClientsComponent} from '../pages/clients/clients.component'
     AvatarModule,
     TableModule,
     WidgetsModule
-    ],
-  declarations: [DashboardComponent, ClientsComponent]
-  
+  ],
+  declarations: [
+  DashboardComponent,
+  WriterDashComponent,
+  ClientsComponent]
 })
 export class DashboardModule {
 }

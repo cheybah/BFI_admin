@@ -4,6 +4,7 @@ import {CommonModule, LocationStrategy, PathLocationStrategy } from '@angular/co
 
 import { BrowserModule, Title } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { NgScrollbarModule } from 'ngx-scrollbar';
@@ -35,7 +36,7 @@ import {
   
 } from '@coreui/angular';
 
-import { IconModule, IconSetService } from '@coreui/icons-angular';
+import { RouterModule } from '@angular/router';
 
 const APP_CONTAINERS = [
   DefaultFooterComponent,
@@ -56,7 +57,6 @@ const APP_CONTAINERS = [
     GridModule,
     HeaderModule,
     SidebarModule,
-    IconModule,
     NavModule,
     ButtonModule,
     HttpClientModule,
@@ -74,18 +74,12 @@ const APP_CONTAINERS = [
     CardModule,
     NgScrollbarModule,
     HttpClientModule,
-    CommonModule,
-    FormsModule, // Add FormsModule here
-
+    FormsModule,
+    CommonModule
+    RouterModule.forRoot([]),
   ],
+          
   providers: [
-
-    {
-      provide: LocationStrategy,
-      useClass: PathLocationStrategy
-    },
-
-    IconSetService,
     Title
   ],
   bootstrap: [AppComponent]

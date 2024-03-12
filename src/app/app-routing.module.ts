@@ -6,14 +6,19 @@ import { Page404Component } from './views/pages/page404/page404.component';
 import { Page500Component } from './views/pages/page500/page500.component';
 import { LoginComponent } from './views/pages/login/login.component';
 import { RegisterComponent } from './views/pages/register/register.component';
+
+import { DashboardModule } from './views/dashboard/dashboard.module';
+import { KanbanComponent } from './views/pages/writer-pages/kanban/kanban.component';
+import { PagesModule } from './views/pages/pages.module';
 import { ClientsComponent } from './views/pages/clients/clients.component';
 import { BlogsComponent } from './views/pages/blogs/blogs.component';
 import { ProfileComponent } from './views/pages/profile/profile.component';
 
+
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'dashboard',
+    redirectTo: 'login',
     pathMatch: 'full'
   },
   {
@@ -25,13 +30,18 @@ const routes: Routes = [
     children: [
       {
         path: 'dashboard',
-        loadChildren: () =>
-          import('./views/dashboard/dashboard.module').then((m) => m.DashboardModule)
+        loadChildren: () => DashboardModule
+      },
+      {
+        path: 'writer-dash/kanban',
+        component: KanbanComponent,
+        data: {
+          title: 'Kanban Page'
+        }
       },
       {
         path: 'pages',
-        loadChildren: () =>
-          import('./views/pages/pages.module').then((m) => m.PagesModule)
+        loadChildren: () => PagesModule
       },
       {
         path: 'clients',
@@ -73,12 +83,20 @@ const routes: Routes = [
     }
   },
   {
+    path: 'kanban',
+    component: KanbanComponent,
+    data: {
+      title: 'Kanban Page'
+    }
+  },
+  {
     path: 'profile',
     component: ProfileComponent,
     data: {
       title: 'profile Page'
     }
-  }
+  },
+ {path: '**', redirectTo: '/404'}
 ];
 
 @NgModule({
