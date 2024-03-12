@@ -9,26 +9,23 @@ import {
   HeaderModule,
   NavModule, SidebarModule
 } from '@coreui/angular';
-import { IconSetService } from '@coreui/icons-angular';
 import { DefaultHeaderComponent } from './default-header.component';
 import { RouterTestingModule } from '@angular/router/testing';
 
 describe('DefaultHeaderComponent', () => {
   let component: DefaultHeaderComponent;
   let fixture: ComponentFixture<DefaultHeaderComponent>;
-  let iconSetService: IconSetService;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [DefaultHeaderComponent],
       imports: [GridModule, HeaderModule, NavModule, BadgeModule, AvatarModule, DropdownModule, BreadcrumbModule, RouterTestingModule, SidebarModule],
-      providers: [IconSetService]
+      providers: []
     })
       .compileComponents();
   });
 
   beforeEach(() => {
-    iconSetService = TestBed.inject(IconSetService);
 
     fixture = TestBed.createComponent(DefaultHeaderComponent);
     component = fixture.componentInstance;

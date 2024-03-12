@@ -1,5 +1,6 @@
 import { Component, ElementRef, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 import { AxiosService } from '../../../services/axios.service';
+import { AuthRoleService } from '../../../services/authrole.service';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 
@@ -24,7 +25,8 @@ export class LoginComponent  implements OnInit {
 
   constructor(private elementRef: ElementRef,
     private axiosService: AxiosService,
-    private router: Router) { }
+    private router: Router,
+    private authRoleService: AuthRoleService) { }
 
   ngOnInit(): void {
     this.scatterIcons();
@@ -39,7 +41,17 @@ export class LoginComponent  implements OnInit {
       { login: this.login, password: this.password }
     ).then(
       (response: any) => {
-        this.router.navigate(['/500']);
+        this.authRoleService.setToken(response.data.token);
+        this.authRoleService.setRole(response.data.role);
+        const role = response.data.role;
+        if (role === 'ADMIN') {
+          this.router.navigate(['/dashboard/admin-dash']);
+        } else if (role === 'WRITER') {
+          this.router.navigate(['/dashboard/writer-dash']);
+        } else {
+          console.error('Invalid role:', role);
+          this.router.navigate(['/404']);
+        }
       }
     ).catch(error => {
       if (error.response && error.response.status === 401) {

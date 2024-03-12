@@ -4,6 +4,7 @@ import { Page404Component } from './page404/page404.component';
 import { Page500Component } from './page500/page500.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { KanbanComponent } from './writer-pages/kanban/kanban.component';
 
 const routes: Routes = [
   {
@@ -32,6 +33,13 @@ const routes: Routes = [
     component: RegisterComponent,
     data: {
       title: 'Register Page'
+    }
+  },
+  {
+    path: 'kanban',
+    component: KanbanComponent,
+    data: {
+      title: 'Kanban Page'
     }
   }
 ];

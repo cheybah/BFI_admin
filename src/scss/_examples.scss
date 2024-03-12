@@ -62,6 +62,9 @@
       position: static;
       display: block;
     }
+    .dropdown-item {
+      cursor: pointer !important;
+    }
 
     > :last-child {
       margin-bottom: 0;

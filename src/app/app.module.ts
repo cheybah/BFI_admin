@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule, Title } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 import { NgScrollbarModule } from 'ngx-scrollbar';
 import { AppRoutingModule } from './app-routing.module';
@@ -24,15 +25,15 @@ import {
   HeaderModule,
   ListGroupModule,
   NavModule,
-  
   ProgressModule,
   SharedModule,
   SidebarModule,
   TabsModule,
-  UtilitiesModule
+  UtilitiesModule,
+  
 } from '@coreui/angular';
 
-import { IconModule, IconSetService } from '@coreui/icons-angular';
+import { RouterModule } from '@angular/router';
 
 const APP_CONTAINERS = [
   DefaultFooterComponent,
@@ -53,7 +54,6 @@ const APP_CONTAINERS = [
     GridModule,
     HeaderModule,
     SidebarModule,
-    IconModule,
     NavModule,
     ButtonModule,
     FormModule,
@@ -69,10 +69,11 @@ const APP_CONTAINERS = [
     ListGroupModule,
     CardModule,
     NgScrollbarModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    RouterModule.forRoot([]),
   ],
   providers: [
-    IconSetService,
     Title
   ],
   bootstrap: [AppComponent]
