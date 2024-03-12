@@ -12,41 +12,39 @@ export const adminNavItems: INavData[] = [
   },
   {
     name: 'Clients',
-    url: '/theme/colors',
+    url: '/clients',
     icon: 'bi bi-people', 
   },
   {
     name: 'Agences',
-    url: '/theme/typography',
+    url: '/agences',
     icon: 'bi bi-building', 
   },
   {
     name: 'Comptes',
-    url: '/theme/typography',
-    linkProps: { fragment: 'someAnchor' },
+    url: '/comptes',
     icon: 'bi bi-cash-stack', 
     children: [
       {
         name: 'Listes',
-        url: '/base/accordion',
+        url: '/listes',
         icon: 'bi bi-list-ul'
       },
       {
         name: 'Types',
-        url: '/base/carousel',
+        url: '/types',
         icon: 'bi bi-file-earmark'
       },
       {
         name: 'Services',
-        url: '/base/collapse',
+        url: '/services',
         icon: 'bi bi-gear'
       }  
     ]
   },
   {
     name: 'Employées',
-    url: '/theme/typography',
-    linkProps: { fragment: 'someAnchor' },
+    url: '/employees',
     icon: 'bi bi-people-fill', 
   },
   {
@@ -60,41 +58,35 @@ export const adminNavItems: INavData[] = [
     children: [
       {
         name: 'Encaissement',
-        url: '/base/cards',
+        url: '/encaissement',
         icon: 'bi bi-cash',
       },
       {
         name: 'Virement',
-        url: '/base/cards',
+        url: '/virement',
         icon: 'bi bi-arrow-right-short',
       },
       {
         name: 'Versement',
-        url: '/base/cards',
+        url: '/versement',
         icon: 'bi bi-arrow-left-short',
       },
       {
         name: 'Retrait',
-        url: '/base/cards',
+        url: '/retrait',
         icon: 'bi bi-currency-dollar',
       }
     ]
   },
   {
     name: 'Transférer',
-    url: '/buttons',
+    url: '/transferer',
     icon: 'bi bi-cursor',
   },
   {
     name: 'Demandes',
-    url: '/forms',
+    url: '/demandes',
     icon: 'bi bi-file-earmark-text', 
-    children: [
-      {
-        name: 'Input Group',
-        url: '/forms/input-group'
-      }
-    ]
   },
 
   {
@@ -103,7 +95,7 @@ export const adminNavItems: INavData[] = [
   },
   {
     name: 'Blogues',
-    url: '/login',
+    url: '/blogs',
     icon: 'bi bi-journal', 
   }
 ];

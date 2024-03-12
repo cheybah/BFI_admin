@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router'
 
 import { DashboardComponent } from './admin-dash/dashboard.component';
 import { WriterDashComponent } from './writer-dash/writer-dash.component';
+
 
 const routes: Routes = [
   {

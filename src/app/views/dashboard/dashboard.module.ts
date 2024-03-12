@@ -6,7 +6,6 @@ import {
   AvatarModule,
   ButtonGroupModule,
   ButtonModule,
-  CardModule,
   FormModule,
   GridModule,
   NavModule,
@@ -21,6 +20,9 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './admin-dash/dashboard.component';
 import { WriterDashComponent } from './writer-dash/writer-dash.component';
 import { WidgetsModule } from '../widgets/widgets.module';
+import { CardModule } from '@coreui/angular';
+
+import {ClientsComponent} from '../pages/clients/clients.component'
 
 @NgModule({
   imports: [
@@ -32,6 +34,7 @@ import { WidgetsModule } from '../widgets/widgets.module';
     GridModule,
     ProgressModule,
     ReactiveFormsModule,
+    CardModule,
     ButtonModule,
     FormModule,
     ButtonModule,
@@ -43,7 +46,8 @@ import { WidgetsModule } from '../widgets/widgets.module';
   ],
   declarations: [
   DashboardComponent,
-  WriterDashComponent]
+  WriterDashComponent,
+  ClientsComponent]
 })
 export class DashboardModule {
 }

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { DefaultLayoutComponent } from './containers';
@@ -6,9 +6,14 @@ import { Page404Component } from './views/pages/page404/page404.component';
 import { Page500Component } from './views/pages/page500/page500.component';
 import { LoginComponent } from './views/pages/login/login.component';
 import { RegisterComponent } from './views/pages/register/register.component';
+
 import { DashboardModule } from './views/dashboard/dashboard.module';
 import { KanbanComponent } from './views/pages/writer-pages/kanban/kanban.component';
 import { PagesModule } from './views/pages/pages.module';
+import { ClientsComponent } from './views/pages/clients/clients.component';
+import { BlogsComponent } from './views/pages/blogs/blogs.component';
+import { ProfileComponent } from './views/pages/profile/profile.component';
+
 
 const routes: Routes = [
   {
@@ -38,8 +43,17 @@ const routes: Routes = [
         path: 'pages',
         loadChildren: () => PagesModule
       },
+      {
+        path: 'clients',
+        component : ClientsComponent,    
+      },
+      {
+        path: 'blogs',
+        component : BlogsComponent,    
+      },
     ]
   },
+
   {
     path: '404',
     component: Page404Component,
@@ -75,7 +89,14 @@ const routes: Routes = [
       title: 'Kanban Page'
     }
   },
-  {path: '**', redirectTo: '/404'}
+  {
+    path: 'profile',
+    component: ProfileComponent,
+    data: {
+      title: 'profile Page'
+    }
+  },
+ {path: '**', redirectTo: '/404'}
 ];
 
 @NgModule({

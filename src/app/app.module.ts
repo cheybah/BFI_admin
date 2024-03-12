@@ -1,8 +1,11 @@
 import { NgModule } from '@angular/core';
+
+import {CommonModule, LocationStrategy, PathLocationStrategy } from '@angular/common';
+
 import { BrowserModule, Title } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ReactiveFormsModule } from '@angular/forms';
-import { FormsModule } from '@angular/forms';
+
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { NgScrollbarModule } from 'ngx-scrollbar';
 import { AppRoutingModule } from './app-routing.module';
@@ -56,6 +59,7 @@ const APP_CONTAINERS = [
     SidebarModule,
     NavModule,
     ButtonModule,
+    HttpClientModule,
     FormModule,
     UtilitiesModule,
     ButtonGroupModule,
@@ -71,8 +75,10 @@ const APP_CONTAINERS = [
     NgScrollbarModule,
     HttpClientModule,
     FormsModule,
+    CommonModule
     RouterModule.forRoot([]),
   ],
+          
   providers: [
     Title
   ],
