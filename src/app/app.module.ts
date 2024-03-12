@@ -75,7 +75,7 @@ const APP_CONTAINERS = [
     NgScrollbarModule,
     HttpClientModule,
     FormsModule,
-    CommonModule
+    CommonModule,
     RouterModule.forRoot([]),
   ],
           

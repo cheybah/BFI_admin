@@ -1,6 +1,6 @@
 import { Component, OnInit, SchemaMetadata } from '@angular/core';
 import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
-import { DashboardChartsData, IChartProps } from '../../dashboard/dashboard-charts-data';
+import { DashboardChartsData, IChartProps } from '../../dashboard/admin-dash/dashboard-charts-data';
 import {UserService} from './user.service';
 import { Router } from '@angular/router';
 export interface IUser {
