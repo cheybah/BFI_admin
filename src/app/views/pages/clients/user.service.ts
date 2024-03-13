@@ -19,4 +19,15 @@ export class UserService {
   getAllUsers(): Observable<IUser[]> {
     return this.http.get<IUser[]>(this.apiUrl);
   }
+  editUser(user: IUser): Observable<void> {
+    const editUrl = `${this.apiUrl}/${user.id}`;
+    // Utilisez une requête PUT ou PATCH pour la modification, en envoyant les données modifiées
+    return this.http.put<void>(editUrl, user);
+  }
+  private readonly archiveapiUrl = 'http://localhost:8080/archived-users'; // Mettez l'URL correcte de votre backend
+
+  getAllArchivedUsers(): Observable<IUser[]> {
+    return this.http.get<IUser[]>(this.archiveapiUrl);
+  }
+  
 }

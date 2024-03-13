@@ -13,6 +13,8 @@ interface Blog {
   styleUrls: ['./blogs.component.scss']
 })
 export class BlogsComponent {
+  today: Date = new Date();
+
   @ViewChild('blogPhotoInput') blogPhotoInput!: ElementRef<HTMLInputElement>;
   @ViewChild('blogTitleInput') blogTitleInput!: ElementRef<HTMLInputElement>;
   @ViewChild('blogDescriptionInput') blogDescriptionInput!: ElementRef<HTMLTextAreaElement>;

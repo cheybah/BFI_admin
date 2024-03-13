@@ -27,17 +27,26 @@ export interface IUser {
   styleUrls: ['./clients.component.scss']
 })
 export class ClientsComponent implements OnInit {
+  public users: IUser[] = [];
+  public archivedusers: IUser[] = [];
+  
+  constructor(private chartsData: DashboardChartsData,
+    private userService: UserService,
+    private router: Router // Injecter le Router dans le constructeur
+    ) {
+  }
 
+  public mainChart: IChartProps = {};
+  public chart: Array<IChartProps> = [];
+  public trafficRadioGroup = new UntypedFormGroup({
+    trafficRadio: new UntypedFormControl('Month')
+  });
+
+ 
   ngOnInit(): void {
     this.initCharts();
-    this.userService.getAllUsers().subscribe(
-      users => {
-        this.users = users;
-      },
-      error => {
-        console.error('Une erreur est survenue lors de la récupération des utilisateurs :', error);
-      }
-    );
+    this.loadUsers();
+    this.loadArchivedUsers();
   }
 
   editUser(user: any) {
@@ -68,19 +77,6 @@ export class ClientsComponent implements OnInit {
       }
     );
   }
-  constructor(private chartsData: DashboardChartsData,
-    private userService: UserService,
-    private router: Router // Injecter le Router dans le constructeur
-    ) {
-  }
-  public users: IUser[] = [];
-
-  public mainChart: IChartProps = {};
-  public chart: Array<IChartProps> = [];
-  public trafficRadioGroup = new UntypedFormGroup({
-    trafficRadio: new UntypedFormControl('Month')
-  });
-
  
   initCharts(): void {
     this.mainChart = this.chartsData.mainChart;
@@ -97,5 +93,16 @@ export class ClientsComponent implements OnInit {
     // Construire le chemin d'accès à l'image à partir du nom de fichier
     return `assets/img/avatars/${filename}`;
   }
+  loadArchivedUsers(): void {
+    this.userService.getAllArchivedUsers().subscribe(
+      users => {
+        this.archivedusers = users;
+      },
+      error => {
+        console.error('An error occurred while fetching archived users:', error);
+      }
+    );
+  }
+  
 }
 

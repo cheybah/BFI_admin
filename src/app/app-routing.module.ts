@@ -9,6 +9,13 @@ import { RegisterComponent } from './views/pages/register/register.component';
 import { ClientsComponent } from './views/pages/clients/clients.component';
 import { BlogsComponent } from './views/pages/blogs/blogs.component';
 import { ProfileComponent } from './views/pages/profile/profile.component';
+import { EmployeeComponent } from './views/pages/employee/employee.component';
+import { AccountsComponent } from './views/pages/accounts/accounts.component';
+import { ServicesComponent } from './views/pages/services/services.component';
+import { PaymentComponent } from './views/pages/payment/payment.component';
+import { TransferComponent } from './views/pages/transfer/transfer.component';
+import { WithdrawalComponent } from './views/pages/withdrawal/withdrawal.component';
+import { CollectionComponent } from './views/pages/collection/collection.component';
 
 const routes: Routes = [
   {
@@ -41,6 +48,36 @@ const routes: Routes = [
         path: 'blogs',
         component : BlogsComponent,    
       },
+      {
+        path: 'employee',
+        component : EmployeeComponent,    
+      },
+      {
+        path: 'accounts',
+        component : AccountsComponent,    
+      } ,
+      {
+        path: 'services',
+        component : ServicesComponent,    
+      }
+      ,
+      {
+        path: 'collection',
+        component : CollectionComponent,    
+      }
+      ,
+      {
+        path: 'transfer',
+        component : TransferComponent,    
+      } ,
+      {
+        path: 'withdrawal',
+        component : WithdrawalComponent,    
+      } ,
+      {
+        path: 'payment',
+        component : PaymentComponent,    
+      }
     ]
   },
 

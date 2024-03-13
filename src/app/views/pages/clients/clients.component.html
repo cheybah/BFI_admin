@@ -64,6 +64,66 @@
                         </c-card-body>
                     </c-card>
                 </c-col>
+
+
+                <c-col xs>
+                    <c-card class="mb-4">
+                        <c-card-header>Archive des Clients</c-card-header>
+                        <c-card-body>
+                            <table
+                                [hover]="true"
+                                [responsive]="true"
+                                [striped]="true"
+                                align="middle"
+                                cTable
+                                class="mb-0 border"
+                            >
+                                <thead cTableColor="light">
+                                    <tr>
+                                        <th class="text-center">
+                                            <i class="bi bi-people-fill"></i>
+                                        </th>
+                                        <th>Client</th>
+                                       <!--<th class="text-center">Ville</th>-->
+                                        <th>Id</th>
+                                        <th>Genre</th>
+                                        <th>Email</th>
+                                        <th class="text-center">Adresse</th>
+                                        <th>Phone Number</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let user of archivedusers; index as i">
+                                        <td class="text-center">
+                                           <c-avatar
+                                                size="md"
+                                                src="{{ getUserPhoto(user.photo)}}" 
+                                                status="{{ user.gender }}" 
+                                            ></c-avatar>
+                                           
+                                            <!--<img [src]="getUserPhoto(user.photo)" alt="User Photo">-->
+                                        </td>
+                                        <td>
+                                            <div>{{ user.firstName }} {{ user.lastName }}</div> <!-- Utilisez les propriétés firstName et lastName -->
+                                            <div class="small text-medium-emphasis text-nowrap">
+                                                <span>
+                                                    {{ user.state }} | Registered: {{ user.registered }}
+                                                </span>
+                                            </div>
+                                        </td>
+                                      <!-- <td class="text-center">{{ user.address.city }}</td> --> 
+                                        <td>{{ user.id }}</td>
+                                        <td>{{ user.gender }}</td>
+                                        <td>{{ user.email }}</td>
+                                        <td >{{ user.address}}</td> <!-- Utilisez la propriété street de l'adresse -->
+                                        <td>{{ user.phoneNumber }}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </c-card-body>
+                    </c-card>
+                </c-col>
+
             </c-row>
         </c-card-body>
 </div>
