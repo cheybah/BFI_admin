@@ -1,4 +1,4 @@
-import { Component, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { DefaultLayoutComponent } from './containers';
@@ -6,21 +6,18 @@ import { Page404Component } from './views/pages/page404/page404.component';
 import { Page500Component } from './views/pages/page500/page500.component';
 import { LoginComponent } from './views/pages/login/login.component';
 import { RegisterComponent } from './views/pages/register/register.component';
-
 import { DashboardModule } from './views/dashboard/dashboard.module';
 import { KanbanComponent } from './views/pages/writer-pages/kanban/kanban.component';
 import { PagesModule } from './views/pages/pages.module';
 import { ClientsComponent } from './views/pages/clients/clients.component';
 import { BlogsComponent } from './views/pages/blogs/blogs.component';
-import { ProfileComponent } from './views/pages/profile/profile.component';
 import { EmployeeComponent } from './views/pages/employee/employee.component';
 import { AccountsComponent } from './views/pages/accounts/accounts.component';
-import { ServicesComponent } from './views/pages/services/services.component';
 import { PaymentComponent } from './views/pages/payment/payment.component';
 import { TransferComponent } from './views/pages/transfer/transfer.component';
 import { WithdrawalComponent } from './views/pages/withdrawal/withdrawal.component';
 import { CollectionComponent } from './views/pages/collection/collection.component';
-
+import { ServicesComponent } from './views/pages/services/services.component';
 
 const routes: Routes = [
   {
@@ -51,46 +48,45 @@ const routes: Routes = [
         loadChildren: () => PagesModule
       },
       {
-        path: 'clients',
+        path: 'admin-dash/clients',
         component : ClientsComponent,    
       },
       {
-        path: 'blogs',
+        path: 'admin-dash/blogs',
         component : BlogsComponent,    
       },
       {
-        path: 'employee',
+        path: 'admin-dash/employee',
         component : EmployeeComponent,    
       },
       {
-        path: 'accounts',
+        path: 'admin-dash/accounts',
         component : AccountsComponent,    
       } ,
       {
-        path: 'services',
+        path: 'admin-dash/services',
         component : ServicesComponent,    
       }
       ,
       {
-        path: 'collection',
+        path: 'admin-dash/collection',
         component : CollectionComponent,    
       }
       ,
       {
-        path: 'transfer',
+        path: 'admin-dash/transfer',
         component : TransferComponent,    
       } ,
       {
-        path: 'withdrawal',
+        path: 'admin-dash/withdrawal',
         component : WithdrawalComponent,    
       } ,
       {
-        path: 'payment',
+        path: 'admin-dash/payment',
         component : PaymentComponent,    
       }
     ]
   },
-
   {
     path: '404',
     component: Page404Component,
@@ -126,14 +122,7 @@ const routes: Routes = [
       title: 'Kanban Page'
     }
   },
-  {
-    path: 'profile',
-    component: ProfileComponent,
-    data: {
-      title: 'profile Page'
-    }
-  },
- {path: '**', redirectTo: '/404'}
+  {path: '**', redirectTo: '/404'}
 ];
 
 @NgModule({
