@@ -22,12 +22,12 @@ export const adminNavItems: INavData[] = [
   },
   {
     name: 'Comptes',
-    url: '/comptes',
+    url: '/accounts',
     icon: 'bi bi-cash-stack', 
     children: [
       {
         name: 'Listes',
-        url: '/listes',
+        url: '/accounts',
         icon: 'bi bi-list-ul'
       },
       {
@@ -44,7 +44,7 @@ export const adminNavItems: INavData[] = [
   },
   {
     name: 'Employées',
-    url: '/employees',
+    url: '/employee',
     icon: 'bi bi-people-fill', 
   },
   {
@@ -58,22 +58,22 @@ export const adminNavItems: INavData[] = [
     children: [
       {
         name: 'Encaissement',
-        url: '/encaissement',
+        url: '/collection',
         icon: 'bi bi-cash',
       },
       {
         name: 'Virement',
-        url: '/virement',
+        url: '/transfer',
         icon: 'bi bi-arrow-right-short',
       },
       {
         name: 'Versement',
-        url: '/versement',
+        url: '/collection',
         icon: 'bi bi-arrow-left-short',
       },
       {
         name: 'Retrait',
-        url: '/retrait',
+        url: '/withdrawal',
         icon: 'bi bi-currency-dollar',
       }
     ]
