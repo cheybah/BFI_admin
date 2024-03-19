@@ -18,6 +18,7 @@ import { TransferComponent } from './views/pages/transfer/transfer.component';
 import { WithdrawalComponent } from './views/pages/withdrawal/withdrawal.component';
 import { CollectionComponent } from './views/pages/collection/collection.component';
 import { ServicesComponent } from './views/pages/services/services.component';
+import { AgencyComponent } from './views/pages/agency/agency.component';
 
 const routes: Routes = [
   {
@@ -50,6 +51,10 @@ const routes: Routes = [
       {
         path: 'admin-dash/clients',
         component : ClientsComponent,    
+      },
+      {
+        path: 'admin-dash/agency',
+        component : AgencyComponent,    
       },
       {
         path: 'admin-dash/blogs',

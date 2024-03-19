@@ -23,6 +23,7 @@ import { WidgetsModule } from '../widgets/widgets.module';
 import { CardModule } from '@coreui/angular';
 
 import {ClientsComponent} from '../pages/clients/clients.component'
+import { AgencyComponent } from '../pages/agency/agency.component';
 
 @NgModule({
   imports: [
@@ -47,7 +48,8 @@ import {ClientsComponent} from '../pages/clients/clients.component'
   declarations: [
   DashboardComponent,
   WriterDashComponent,
-  ClientsComponent]
+  ClientsComponent,
+  AgencyComponent]
 })
 export class DashboardModule {
 }

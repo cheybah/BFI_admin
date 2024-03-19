@@ -1,0 +1,100 @@
+<!-- agency.component.html -->
+<form [formGroup]="editForm" *ngIf="editForm">
+
+    <div class="fade-in">
+        <c-card-body>
+            <c-row>
+                <c-col xs>
+                    <c-card class="mb-4">
+                        <c-card-header>Agences</c-card-header>
+                        <c-card-body>
+                            <table
+                                [hover]="true"
+                                [responsive]="true"
+                                [striped]="true"
+                                align="middle"
+                                cTable
+                                class="mb-0 border"
+                            >
+                                <thead cTableColor="light">
+                                    <tr>
+                                        <th></th>
+                                        <th><i class="bi bi-building"></i></th>
+                                        <th>Id</th>
+                                        <th>Nom</th>
+                                        <th>Ville</th>
+                                        <th>Adresse</th>
+                                        <th>Télèphone</th>
+                                        <th>Email</th>
+                                        <th>Modifier</th>
+                                        <th>Supprimer</th>
+                                    </tr>
+                                </thead>
+    
+                                <tbody>
+                                    <tr *ngFor="let agency of agencies">
+                                        <td></td>
+                                        <td></td>
+                                        <td>{{ agency.idAgency }}</td>
+                                        <td>
+                                            <ng-container *ngIf="editForm.value.id !== agency.idAgency; else editModeName">
+                                                {{ agency.name }}
+                                            </ng-container>
+                                            <ng-template #editModeName>
+                                                <input type="text" formControlName="name" class="form-control">
+                                            </ng-template>
+                                        </td>
+                                        <td>
+                                            <ng-container *ngIf="editForm.value.id !== agency.idAgency; else editModeVille">
+                                                {{ agency.ville }}
+                                            </ng-container>
+                                            <ng-template #editModeVille>
+                                                <input type="text" formControlName="ville" class="form-control">
+                                            </ng-template>
+                                        </td>
+                                        <td>
+                                            <ng-container *ngIf="editForm.value.id !== agency.idAgency; else editModeAddress">
+                                                {{ agency.address }}
+                                            </ng-container>
+                                            <ng-template #editModeAddress>
+                                                <input type="text" formControlName="address" class="form-control">
+                                            </ng-template>
+                                        </td>
+                                        <td>
+                                            <ng-container *ngIf="editForm.value.id !== agency.idAgency; else editModeTel">
+                                                {{ agency.tel }}
+                                            </ng-container>
+                                            <ng-template #editModeTel>
+                                                <input type="text" formControlName="tel" class="form-control">
+                                            </ng-template>
+                                        </td>
+                                        <td>
+                                            <ng-container *ngIf="editForm.value.id !== agency.idAgency; else editModeEmail">
+                                                {{ agency.email }}
+                                            </ng-container>
+                                            <ng-template #editModeEmail>
+                                                <input type="text" formControlName="email" class="form-control">
+                                            </ng-template>
+                                        </td>
+                                       
+                                        <td>
+                                            <ng-container *ngIf="editForm.value.id !== agency.idAgency">
+                                                <a (click)="editAgency(agency.idAgency)"><i class="bi bi-pencil-square"></i></a>
+                                            </ng-container>
+                                            <ng-container *ngIf="editForm.value.id === agency.idAgency">
+                                                <button type="button" class="btn btn-primary px-4" (click)="submitChanges()">Submit</button>
+                                            </ng-container>
+                                        </td>
+                                        
+
+                                        <td><a (click)="deleteAgency(agency.idAgency)"><i class="bi bi-trash"></i></a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </c-card-body>
+                    </c-card>
+                </c-col>
+            </c-row>
+        </c-card-body>
+    </div>
+</form>
