@@ -3,7 +3,7 @@ import { INavData } from '@coreui/angular';
 export const adminNavItems: INavData[] = [
   {
     name: 'Tableau de bord',
-    url: '/dashboard',
+    url: '/dashboard/admin-dash',
     icon: 'bi bi-speedometer2', 
   },
   {
@@ -17,7 +17,7 @@ export const adminNavItems: INavData[] = [
   },
   {
     name: 'Agences',
-    url: '/admin-dash/agences',
+    url: '/admin-dash/agency',
     icon: 'bi bi-building', 
   },
   {

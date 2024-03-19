@@ -7,7 +7,7 @@ import { Page404Component } from './page404/page404.component';
 import { Page500Component } from './page500/page500.component';
 import { ButtonModule, CardModule, FormModule, GridModule } from '@coreui/angular';
 import { IconModule } from '@coreui/icons-angular';
-import { FormsModule } from '@angular/forms'; // Import FormsModule
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'; // Import FormsModule
 import { BlogsComponent } from './blogs/blogs.component';
 
 
@@ -28,7 +28,8 @@ import { BlogsComponent } from './blogs/blogs.component';
     GridModule,
     IconModule,
     FormsModule,
-    FormModule
+    FormModule,
+    ReactiveFormsModule 
 ],
   providers: []
 })
