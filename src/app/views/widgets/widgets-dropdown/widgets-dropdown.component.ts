@@ -9,6 +9,7 @@ import {
 } from '@angular/core';
 import { getStyle } from '@coreui/utils';
 import { ChartjsComponent } from '@coreui/angular-chartjs';
+import { UserService } from '../../pages/clients/user.service';
 
 @Component({
   selector: 'app-widgets-dropdown',
@@ -19,8 +20,11 @@ import { ChartjsComponent } from '@coreui/angular-chartjs';
 export class WidgetsDropdownComponent implements OnInit, AfterContentInit {
 
   constructor(
-    private changeDetectorRef: ChangeDetectorRef
+    private changeDetectorRef: ChangeDetectorRef,   
+    private userService: UserService
+
   ) {}
+  nombreClients: number = 0;
 
   data: any[] = [];
   options: any[] = [];
@@ -117,6 +121,8 @@ export class WidgetsDropdownComponent implements OnInit, AfterContentInit {
 
   ngOnInit(): void {
     this.setData();
+    this.nombre_clients();
+
   }
 
   ngAfterContentInit(): void {
@@ -168,6 +174,13 @@ export class WidgetsDropdownComponent implements OnInit, AfterContentInit {
       }
     }
   }
+  nombre_clients(){
+    this.userService.getAllUsers().subscribe(clients => {
+      // Une fois les données des clients récupérées, calculez le nombre total
+      this.nombreClients = clients.length;
+      console.log(this.nombreClients);
+    });
+  }
 }
 
 @Component({
@@ -211,7 +224,7 @@ export class ChartSample implements AfterViewInit {
       }
     }
   };
-
+ 
   ngAfterViewInit(): void {
     setTimeout(() => {
       const data = () => {

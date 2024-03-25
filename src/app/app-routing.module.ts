@@ -19,6 +19,7 @@ import { WithdrawalComponent } from './views/pages/withdrawal/withdrawal.compone
 import { CollectionComponent } from './views/pages/collection/collection.component';
 import { ServicesComponent } from './views/pages/services/services.component';
 import { AgencyComponent } from './views/pages/agency/agency.component';
+import {ProfileComponent } from './views/pages/profile/profile.component';
 
 const routes: Routes = [
   {
@@ -57,7 +58,7 @@ const routes: Routes = [
         component : AgencyComponent,    
       },
       {
-        path: 'admin-dash/blogs',
+        path: 'writer-dash/blogs',
         component : BlogsComponent,    
       },
       {
@@ -125,6 +126,13 @@ const routes: Routes = [
     component: KanbanComponent,
     data: {
       title: 'Kanban Page'
+    }
+  },
+  {
+    path: 'profil',
+    component: ProfileComponent ,
+    data: {
+      title: 'Admin Page'
     }
   },
   {path: '**', redirectTo: '/404'}

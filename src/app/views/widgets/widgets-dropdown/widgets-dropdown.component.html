@@ -3,10 +3,10 @@
     <c-widget-stat-a
       class="mb-4"
       color="primary"
-      title="Users"
+      title="Clients"
     >
       <ng-template cTemplateId="widgetValueTemplate" ngPreserveWhitespaces>
-        26K
+        {{ nombreClients }}
         <span class="fs-6 fw-normal">
           (-12.4% <svg cIcon name="cilArrowBottom"></svg>)
         </span>
@@ -36,7 +36,7 @@
   </c-col>
   <c-col sm="6" xl="3">
     <c-widget-stat-a
-      [title]="'Income'"
+      [title]="'Revenu'"
       class="mb-4"
       color="info"
     >
@@ -96,7 +96,7 @@
   </c-col>
   <c-col sm="6" xl="3">
     <c-widget-stat-a
-      [title]="'Sessions'"
+      [title]="'trafic Web'"
       class="mb-4"
       color="danger"
     >
