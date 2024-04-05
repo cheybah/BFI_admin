@@ -1,8 +1,11 @@
-import { Component, OnInit, SchemaMetadata } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { DashboardChartsData, IChartProps } from '../../dashboard/admin-dash/dashboard-charts-data';
 import {UserService} from './user.service';
 import { Router } from '@angular/router';
+import * as bootstrap from 'bootstrap';
+
+
 export interface IUser {
   firstName: string;
   lastName: string;
@@ -16,7 +19,6 @@ export interface IUser {
   address: {
     street: string;
     city: string;
-    // Ajoutez d'autres propriétés de l'adresse si nécessaire
   };
 }
 
@@ -26,9 +28,15 @@ export interface IUser {
   templateUrl: './clients.component.html',
   styleUrls: ['./clients.component.scss']
 })
+
 export class ClientsComponent implements OnInit {
+
+
   public users: IUser[] = [];
   public archivedusers: IUser[] = [];
+  selectedUser: IUser | null = null; 
+  
+
   
   constructor(private chartsData: DashboardChartsData,
     private userService: UserService,
@@ -49,9 +57,14 @@ export class ClientsComponent implements OnInit {
     this.loadArchivedUsers();
   }
 
-  editUser(user: any) {
-    // Implement your edit logic here
-  }
+  displayUser(user: any): void {
+    this.selectedUser = user;
+    const modalElement = document.getElementById('userModal');
+    if (modalElement) {
+        const modal = new bootstrap.Modal(modalElement);
+        modal.show();
+    }
+}
 
   loadUsers(): void {
     this.userService.getAllUsers().subscribe(

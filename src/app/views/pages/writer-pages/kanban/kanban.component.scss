@@ -1,0 +1,47 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+.kanban {
+  display: flex;
+  justify-content: space-between;
+}
+
+.column {
+  width: 30%;
+  background-color: #f4f4f4;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+}
+
+.column h2 {
+  text-align: center;
+}
+
+.card {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 5px 0;
+}
+
+.taskBody {
+  cursor: pointer;
+  background-color: whitesmoke;
+  padding: 8px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+
+.toggleBody{
+  cursor: pointer;
+    background-color: whitesmoke;
+    border-radius: 6px;
+    border: none;
+    margin-bottom: 8px;
+    width: -webkit-fill-available; 
+}
+

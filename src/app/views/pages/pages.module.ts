@@ -9,6 +9,8 @@ import { ButtonModule, CardModule, FormModule, GridModule } from '@coreui/angula
 import { IconModule } from '@coreui/icons-angular';
 import { FormsModule } from '@angular/forms'; // Import FormsModule
 import { BlogsComponent } from './blogs/blogs.component';
+import { KanbanComponent } from './writer-pages/kanban/kanban.component';
+
 
 
 
@@ -19,6 +21,7 @@ import { BlogsComponent } from './blogs/blogs.component';
     RegisterComponent,
     Page404Component,
     Page500Component,
+    KanbanComponent
   ],
   imports: [
     CommonModule,
@@ -28,8 +31,7 @@ import { BlogsComponent } from './blogs/blogs.component';
     GridModule,
     IconModule,
     FormsModule,
-    FormModule
-],
+    FormModule],
   providers: []
 })
 export class PagesModule {

@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
-
-import {CommonModule, LocationStrategy, PathLocationStrategy } from '@angular/common';
-
+import {CommonModule} from '@angular/common';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserModule, Title } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -37,6 +36,7 @@ import {
 } from '@coreui/angular';
 
 import { RouterModule } from '@angular/router';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 const APP_CONTAINERS = [
   DefaultFooterComponent,
@@ -74,13 +74,15 @@ const APP_CONTAINERS = [
     CardModule,
     NgScrollbarModule,
     HttpClientModule,
+    NgbModule,
     FormsModule,
     CommonModule,
     RouterModule.forRoot([]),
   ],
           
   providers: [
-    Title
+    Title,
+    provideAnimationsAsync()
   ],
   bootstrap: [AppComponent]
 })
