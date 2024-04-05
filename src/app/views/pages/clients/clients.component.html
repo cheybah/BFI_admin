@@ -26,7 +26,7 @@
                                         <th>Email</th>
                                         <th class="text-center">Adresse</th>
                                         <th>Phone Number</th>
-                                        <th>Edit</th>
+                                        <th>Details</th>
                                         <th>Delete<th>
                                     </tr>
                                 </thead>
@@ -55,7 +55,7 @@
                                         <td>{{ user.email }}</td>
                                         <td >{{ user.address}}</td> <!-- Utilisez la propriété street de l'adresse -->
                                         <td>{{ user.phoneNumber }}</td>
-                                        <td><a href="#" (click)="editUser(user)"><i class="bi bi-pencil-square"></i></a></td>
+                                        <td><a (click)="displayUser(user)"><i class="bi bi-pencil-square"></i></a></td>
                                         <td><i class="bi bi-trash"  (click)="deleteUser(user.id)"></i></td>                                        
                                         <td></td>
                                     </tr>
@@ -126,4 +126,45 @@
 
             </c-row>
         </c-card-body>
+
+<!-- Display user modal -->
+<div class="modal fade" id="userModal" tabindex="-1" aria-labelledby="userModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="userModalLabel">{{ selectedUser?.firstName }} {{ selectedUser?.lastName }} User Information</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="container-fluid">
+            <div class="row">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <img src="{{ getUserPhoto(selectedUser?.photo || '') }}" class="rounded-circle" style="max-width: 100%; height: auto;" />
+                      </div>
+              <div class="col-lg-6">
+                <div class="user-container">
+                  <div class="user-header">
+                    <h2 class="titleS"><b>{{ selectedUser?.firstName }} {{ selectedUser?.lastName }}</b></h2>
+                  </div>
+                  <h5>Email</h5>
+                  <p>{{ selectedUser?.email }}</p>
+                  <h5 class="mt-4">Gender</h5>
+                  <p>{{ selectedUser?.gender }}</p>
+                  <h5 class="mt-4">Phone Number</h5>
+                  <p>{{ selectedUser?.phoneNumber }}</p>
+                  <h5 class="mt-4">Address</h5>
+                  <p>{{ selectedUser?.address }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
 </div>

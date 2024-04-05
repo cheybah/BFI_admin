@@ -53,7 +53,7 @@ export class WidgetsDropdownComponent implements OnInit, AfterContentInit {
       borderColor: 'rgba(255,255,255,.55)',
       pointBackgroundColor: getStyle('--cui-primary'),
       pointHoverBorderColor: getStyle('--cui-primary'),
-      data: [65, 59, 84, 84, 51, 55, 40]
+      data: [65, 59, 84, 84, 51, 55, 40] //back
     }], [{
       label: 'My Second dataset',
       backgroundColor: 'transparent',
