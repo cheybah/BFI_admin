@@ -3,7 +3,7 @@ import { INavData } from '@coreui/angular';
 export const adminNavItems: INavData[] = [
   {
     name: 'Tableau de bord',
-    url: '/dashboard',
+    url: '/dashboard/admin-dash',
     icon: 'bi bi-speedometer2', 
   },
   {
@@ -17,7 +17,7 @@ export const adminNavItems: INavData[] = [
   },
   {
     name: 'Agences',
-    url: '/admin-dash/agences',
+    url: '/admin-dash/agency',
     icon: 'bi bi-building', 
   },
   {
@@ -92,11 +92,6 @@ export const adminNavItems: INavData[] = [
   {
     title: true,
     name: 'Gestion du flux de travail'
-  },
-  {
-    name: 'Blogues',
-    url: '/admin-dash/blogs',
-    icon: 'bi bi-journal', 
   }
 ];
 
@@ -106,7 +101,7 @@ export const writerNavItems: INavData[] = [
     icon: 'bi bi-speedometer2', 
   },
   {
-    name: 'Blogs',
+    name: 'Blogues',
     title: true
   },
   {
@@ -115,8 +110,8 @@ export const writerNavItems: INavData[] = [
     icon: 'bi bi-substack',
     children: [
       {
-        name: 'Ajouter un nouveau blog',
-        url: '/',
+        name: 'Ajouter un nouveau blogue',
+        url: '/writer-dash/blogs',
         icon: 'bi bi-journal-plus',
       },
       {
@@ -136,6 +131,7 @@ export const writerNavItems: INavData[] = [
     url: '/',
     icon: 'bi bi-chat-quote-fill', 
   },
+  
   {
     name: 'A Faire',
     title: true

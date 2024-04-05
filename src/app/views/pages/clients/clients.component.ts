@@ -55,6 +55,7 @@ export class ClientsComponent implements OnInit {
     this.initCharts();
     this.loadUsers();
     this.loadArchivedUsers();
+//    this.nombre_clients();
   }
 
   displayUser(user: any): void {
@@ -80,8 +81,7 @@ export class ClientsComponent implements OnInit {
     this.userService.deleteUser(userId).subscribe(
       () => {
         // Suppression réussie, rechargez la liste des utilisateurs
-        this.router.navigate(['/clients']); // Naviguer vers la même route après la suppression
-        this.loadUsers();
+        window.location.reload();
 
       },
       error => {
@@ -116,6 +116,6 @@ export class ClientsComponent implements OnInit {
       }
     );
   }
-  
+
 }
 
