@@ -32,6 +32,7 @@ import {
   SidebarModule,
   TabsModule,
   UtilitiesModule,
+  ModalModule
   
 } from '@coreui/angular';
 
@@ -77,6 +78,7 @@ const APP_CONTAINERS = [
     NgbModule,
     FormsModule,
     CommonModule,
+    ModalModule,
     RouterModule.forRoot([]),
   ],
           

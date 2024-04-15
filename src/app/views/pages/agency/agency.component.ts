@@ -1,7 +1,8 @@
-// agency.component.ts
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { agencyService } from './agencyService';
+import { agencyService } from 'src/app/services/agencyService';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import * as bootstrap from 'bootstrap';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -10,12 +11,15 @@ import Swal from 'sweetalert2';
   styleUrls: ['./agency.component.scss']
 })
 export class AgencyComponent implements OnInit {
+  @ViewChild('createAgencyModal') createAgencyModal!: ElementRef;
+  createForm!: FormGroup;
   agencies: any[] = [];
   editForm: FormGroup;
 
   constructor(
     private agencyService: agencyService,
     private fb: FormBuilder,
+    private modalService: NgbModal
   ) {
     this.editForm = this.fb.group({
       id: [''],
@@ -25,7 +29,16 @@ export class AgencyComponent implements OnInit {
       tel: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
     });
+  {
+    this.createForm = this.fb.group({
+      name: ['', Validators.required],
+      ville: ['', Validators.required],
+      address: ['', Validators.required],
+      tel: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+    });
   }
+}
 
   ngOnInit(): void {
     this.fetchAgencies();
@@ -52,7 +65,7 @@ export class AgencyComponent implements OnInit {
           Swal.fire('Deleted!', 'The agency has been deleted.', 'success');
         });
       } else if (result.dismiss === Swal.DismissReason.cancel) {
-        Swal.fire('Cancelled', 'The agency is safe', 'error');
+        Swal.fire('Cancelled', 'Agency deletion is cancelled', 'error');
       }
     });
   }
@@ -71,11 +84,64 @@ export class AgencyComponent implements OnInit {
 
   submitChanges() {
     const editedAgency = this.editForm.value;
-    this.agencyService.editAgency(editedAgency).subscribe(() => {
-      const index = this.agencies.findIndex(agency => agency.idAgency === editedAgency.id);
-      if (index !== -1) {
-        this.agencies[index] = editedAgency;
-      }
+    Swal.fire({
+        title: 'Are you sure?',
+        text: 'You want to edit this agency?',
+        icon: 'question',
+        showCancelButton: true,
+        confirmButtonText: 'Yes, edit it!',
+        cancelButtonText: 'No, cancel'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            this.agencyService.editAgency(editedAgency).subscribe(() => {
+                const index = this.agencies.findIndex(agency => agency.idAgency === editedAgency.id);
+                if (index !== -1) {
+                    this.agencies[index] = editedAgency;
+                }
+                Swal.fire('Changes Submitted!', 'The changes have been successfully submitted.', 'success');
+            });
+        } else if (result.dismiss === Swal.DismissReason.cancel) {
+            Swal.fire('Cancelled', 'The changes have not been submitted.', 'info');
+        }
     });
+}
+
+  openCreateModal() {
+    const modalElement = document.getElementById('agencyModal');
+    if (modalElement) {
+        const modal = new bootstrap.Modal(modalElement);
+        modal.show();
+    }
+  }
+  
+  
+  closeCreateModal() {
+    const modalElement = document.getElementById('agencyModal');
+    if (modalElement) {
+        const modal = bootstrap.Modal.getInstance(modalElement);
+        if (modal) {
+            modal.hide();
+        }
+    }
+  }
+  
+  submitCreateForm() {
+    const newAgency = this.createForm.value;
+    this.agencyService.addAgency(newAgency).subscribe(
+      (addedAgency: any) => {
+        // Assuming the added agency is returned in the response
+        this.agencies.push(addedAgency);
+        // Close the modal after successfully adding the agency
+        this.closeCreateModal();
+        // Reset the form for future use
+        this.createForm.reset();
+        Swal.fire('Success!', 'Agency added successfully.', 'success');
+      },
+      (error) => {
+        // Handle error cases
+        console.error('Error adding agency:', error);
+        Swal.fire('Error!', 'Failed to add agency. Please try again.', 'error');
+      }
+    );
   }
 }
