@@ -19,4 +19,8 @@ export class agencyService {
   editAgency(agency: any): Observable<void> {
     return this.http.put<void>(`http://localhost:8080/agencies/${agency.id}`, agency);
   }
-}
+    addAgency(agency: any): Observable<any> {
+    return this.http.post<any>('http://localhost:8080/agencies', agency);
+  }
+} 
+

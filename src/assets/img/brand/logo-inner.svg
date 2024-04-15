@@ -1,9 +1,11 @@
-<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 310 83" width="310" height="83">
-	<title>logo-inner</title>
-	<defs>
-		<image  width="275" height="83" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARMAAABTCAMAAACLWBNSAAAAAXNSR0IB2cksfwAAANVQTFRFAAAA////////////////////////////////////////////////////////////////////////////+ZIY+ZIY+ZIY+ZIY+ZIY+ZIY+ZIY+ZIY+ZIY+ZIY+ZIY+ZIY+ZIY+ZIY+ZIY+ZIY+ZIY+ZIY+ZIY+ZIY+ZIY+ZIY+ZIY+ZIY+ZIY+ZIY+ZIY+ZIY+ZIY+ZIY+ZIY+ZIY+ZIY+ZIY+ZIY+ZIY+ZIY+ZIY+ZIY+ZIY+ZIY+ZIY+ZIY+ZIY+ZIY+ZIY+ZIY+ZIY+ZIY+ZIY+ZIYRcdEuAAAAEd0Uk5TAAD/BxscDR+AfXUpAXFpXwIIBgVDn8G2scLDv8S7cAU79vz6+f377XsCiu//5ASP8eeL8OLhiYfu4I3pR8v4jlSovr2GCgDhnEwPAAADGElEQVR4nO3cZ3vTMBAHcMsQ9irDJCWskLBH2ZvSMr7/R4LngcaS7866aDmy7v+CxK590v0Sx0lrUlWqDh1VZZ7wJHU9dE++iUCSPYqYwIgJjJjAiAmMmMCICYyYwIgJzDhNjh2fTE44f8aIbUJ+dnCbkGX7o5UnT50+c/ZcGJMwVWr6J3rwxzGIyeT8hYsT12bwkp5lmCb4cEFMLu1cvuL8NBnUBB0viIlfBjXBBizexNajmDB2iNZAhJJMk74tkR0SNhChJN/ENmKRJpaut9fk6rXm+nQ6nVHZvTG/ees2UWacJnfmdxf3lsvlarXAs1qs7j94+AgvM06Tx0+eMvLsOV5mnCYv9jgmL4syefWaY/LGycTSROYmb11MyC2RHdwb8Epak25sE2I0LCZislUm71jnYn+TjT4DDmzy/kMiE9jF1prw3rOVZRLxXGzrYtMWx2HS37aYjM7ko5gUbhLrvAPX9U7IvQGviAm3pJjAknLeERNOSXkfm84EpndC7g14RUy4JcUElkz2u4L+Cbk34JVhTSwTcm/AK3jJNMcOepFfASb0/yMjLl8twCTH+Jhw/oaeY3xMOL8/yTFiAoP3Eu76kxyD9/KJ9TzhXH+SY3xMPhdl8uXrN3Apm7n898d7+4zr2XIM0cv3g9msaTNrDht9uWl25z9+/vqNlzFMlLbS2KR7t1rf/r/B99RKVtQ4cFrGcnsXvwn0+JImOIO5UBmrzBvLfUhCjG4sajwIxlaZYDRcE9vohAkys0FM4HyZJnijDiaqzyTYRyhHE4VNSTfpHE5+JnAQhKHbTBoTMHKfSbcMZcJ5PcnLBFnY0MQ2urmkSBPQTAQTeM4FrXV7tpmYr5XoBqgUoZDe5N+yMXJnF9iSbqLvCUqiE1DoWq4JOHacUWqyjN2EOE1aTBRpoq/WVxozVOzzTqgwHiniWNccnd+fcExq2kSVZrJ+Z6I929rnob5l6OCHFWKi2s3XU4YmnSr46yk6PBi8La/9m9wkdZT/8KMzCRAxgRETGDGBERMYMYERE5gY3x+b+5fqKvme4W7+AI9CRA6DDUVdAAAAAElFTkSuQmCC"/>
-	</defs>
-	<style>
-	</style>
-	<use id="Background" href="#img1" x="0" y="0"/>
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
+ "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+ width="320.000000pt" height="123.000000pt" viewBox="0 0 320.000000 123.000000"
+ preserveAspectRatio="xMidYMid meet">
+
+<g transform="translate(0.000000,123.000000) scale(0.100000,-0.100000)"
+fill="#000000" stroke="none">
+</g>
 </svg>
