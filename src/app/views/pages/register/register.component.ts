@@ -6,7 +6,7 @@ import { RegisterService } from '../../../services/register.service';
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss'],
-  providers: [RegisterService] // Provide RegisterService at the component level
+  providers: [RegisterService] //to provide the service at component level
 })
 export class RegisterComponent {
 
@@ -49,5 +49,4 @@ export class RegisterComponent {
       }
     );
   }
-
 }

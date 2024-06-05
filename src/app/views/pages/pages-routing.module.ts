@@ -5,6 +5,7 @@ import { Page500Component } from './page500/page500.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { KanbanComponent } from './writer-pages/kanban/kanban.component';
+import { ChatComponent } from './chat/chat.component';
 
 const routes: Routes = [
   {
@@ -40,6 +41,13 @@ const routes: Routes = [
     component: KanbanComponent,
     data: {
       title: 'Kanban Page'
+    }
+  },
+  {
+    path: 'admin-dash/agency',
+    component: ChatComponent,
+    data: {
+      title: 'Chat Page'
     }
   }
 ];

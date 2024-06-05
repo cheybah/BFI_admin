@@ -27,6 +27,9 @@
     "@coreui/icons-angular": "^4.7.16",
     "@coreui/utils": "^2.0.2",
     "@ng-bootstrap/ng-bootstrap": "^16.0.0",
+    "@stomp/stompjs": "^7.0.0",
+    "@types/sockjs-client": "^1.5.4",
+    "@types/stompjs": "^2.3.9",
     "axios": "^1.6.7",
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
@@ -36,6 +39,8 @@
     "lodash-es": "^4.17.21",
     "ngx-scrollbar": "^13.0.3",
     "rxjs": "~7.8.1",
+    "sockjs-client": "^1.6.1",
+    "stompjs": "^2.3.3",
     "sweetalert2": "^11.10.6",
     "tslib": "^2.6.2",
     "zone.js": "~0.14.4"
