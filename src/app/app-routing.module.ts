@@ -20,6 +20,7 @@ import { CollectionComponent } from './views/pages/collection/collection.compone
 import { ServicesComponent } from './views/pages/services/services.component';
 import { AgencyComponent } from './views/pages/agency/agency.component';
 import {ProfileComponent } from './views/pages/profile/profile.component';
+import { ChatComponent } from './views/pages/chat/chat.component';
 
 const routes: Routes = [
   {
@@ -56,6 +57,10 @@ const routes: Routes = [
       {
         path: 'admin-dash/agency',
         component : AgencyComponent,    
+      },
+      {
+        path: 'admin-dash/chat',
+        component : ChatComponent,    
       },
       {
         path: 'writer-dash/blogs',
