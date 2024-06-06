@@ -1,0 +1,28 @@
+<h2 class="my-4">Liste des rendez-vous</h2>
+<table class="table table-striped table-hover">
+  <thead class="thead-dark">
+    <tr>
+      <th>Client ID</th>
+      <th>Agence</th>
+      <th>Raison</th>
+      <th>Date</th>
+      <th>Heure</th>
+      <th>Status</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let rendezVous of rendezVousList">
+      <td>{{ rendezVous.clientId }}</td>
+      <td>{{ rendezVous.agence }}</td>
+      <td>{{ rendezVous.raison }}</td>
+      <td>{{ rendezVous.date }}</td>
+      <td>{{ rendezVous.heure }}</td>
+      <td>{{ rendezVous.status }}</td>
+      <td>
+        <button class="btn btn-success btn-sm" (click)="updateStatus(rendezVous.id, 'Approuvé')">Approuvé</button>
+        <button class="btn btn-danger btn-sm" (click)="updateStatus(rendezVous.id, 'Rejetée')">Rejetée</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

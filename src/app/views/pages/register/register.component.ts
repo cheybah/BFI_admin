@@ -1,5 +1,7 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { RegisterService } from '../../../services/register.service';
+import Swal from 'sweetalert2';  // Import Swal
+
 
 
 @Component({
@@ -42,6 +44,17 @@ export class RegisterComponent {
       (response) => {
         // Handle successful registration response
         console.log('Registration successful:', response);
+        Swal.fire({  // Display success popup
+          title: 'Success!',
+          text: 'Staff account created successfully.',
+          icon: 'success',
+          confirmButtonText: 'OK'
+        }).then((result) => {
+          if (result.isConfirmed) {
+            // Redirect to 'dashboard/admin-dash' after user clicks 'OK'
+            window.location.href = 'dashboard/admin-dash';
+          }
+        });
       },
       (error) => {
         // Handle registration error
