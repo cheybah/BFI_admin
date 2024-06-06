@@ -32,7 +32,8 @@ import { KanbanComponent } from './writer-pages/kanban/kanban.component';
     IconModule,
     FormsModule,
     FormModule,
-    ReactiveFormsModule 
+    ReactiveFormsModule,
+    CommonModule
 ],
   providers: []
 })

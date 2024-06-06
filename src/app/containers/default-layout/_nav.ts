@@ -16,9 +16,26 @@ export const adminNavItems: INavData[] = [
     icon: 'bi bi-people', 
   },
   {
-    name: 'Communication',
-    url: '/admin-dash/chat',
-    icon: 'bi bi-chat-dots-fill', 
+    name: 'Service Client',
+    url: '/admin-dash/accounts',
+    icon: 'bi bi-people-fill', 
+    children: [
+      {
+        name: 'Communication',
+        url: '/admin-dash/chat',
+        icon: 'bi bi-chat-dots-fill'
+      },
+      {
+        name: 'Reclamations',
+        url: '/admin-dash/reclamation',
+        icon: 'bi bi-exclamation-diamond'
+      },
+      {
+        name: 'Rendez-vous',
+        url: '/admin-dash/rendez-vous',
+        icon: 'bi bi-clock'
+      }  
+    ]
   },
   {
     name: 'Comptes',
@@ -43,8 +60,8 @@ export const adminNavItems: INavData[] = [
     ]
   },
   {
-    name: 'Employées',
-    url: '/admin-dash/employee',
+    name: 'Ajouter employée',
+    url: '/register',
     icon: 'bi bi-people-fill', 
   },
   {

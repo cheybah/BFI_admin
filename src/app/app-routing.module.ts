@@ -21,6 +21,8 @@ import { ServicesComponent } from './views/pages/services/services.component';
 import { AgencyComponent } from './views/pages/agency/agency.component';
 import {ProfileComponent } from './views/pages/profile/profile.component';
 import { ChatComponent } from './views/pages/chat/chat.component';
+import { RendezVousComponent } from './views/pages/rendez-vous/rendez-vous.component';
+import { ReclamationComponent } from './views/pages/reclamation/reclamation.component';
 
 const routes: Routes = [
   {
@@ -61,6 +63,14 @@ const routes: Routes = [
       {
         path: 'admin-dash/chat',
         component : ChatComponent,    
+      },
+      {
+        path: 'admin-dash/rendez-vous',
+        component : RendezVousComponent,    
+      },
+      {
+        path: 'admin-dash/reclamation',
+        component : ReclamationComponent,    
       },
       {
         path: 'writer-dash/blogs',

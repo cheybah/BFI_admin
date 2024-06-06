@@ -1,0 +1,49 @@
+<h2 class="my-4">Liste des réclamations</h2>
+<table class="table table-striped table-hover">
+  <thead class="thead-dark">
+    <tr>
+      <th>Client ID</th>
+      <th>Reference</th>
+      <th>Sujet</th>
+      <th>Contenu</th>
+      <th>Date</th>
+      <th>Status</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let reclamation of reclamationList">
+      <td>{{ reclamation.clientId }}</td>
+      <td>{{ reclamation.reference }}</td>
+      <td>{{ reclamation.sujet }}</td>
+      <td>{{ reclamation.contenu }}</td>
+      <td>{{ reclamation.date }}</td>
+      <td>{{ reclamation.status }}</td>
+      <td>
+        <button *ngIf="!reclamation.responded" class="btn btn-success btn-sm" (click)="openModal(reclamation.idReclamation)">Respond</button>
+        <button *ngIf="reclamation.responded" class="btn btn-secondary btn-sm" disabled>Répondu</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Modal -->
+<div class="modal fade" tabindex="-1" role="dialog" [ngClass]="{'show': showModal}" [ngStyle]="{'display': showModal ? 'block' : 'none'}">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Write a response</h5>
+        <button type="button" class="close" (click)="closeModal()">
+          <span>&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <textarea [(ngModel)]="responseText" class="form-control" placeholder="Write a response"></textarea>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" (click)="updateReclamation(currentId, responseText)">Send Response</button>
+        <button type="button" class="btn btn-secondary" (click)="closeModal()">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
