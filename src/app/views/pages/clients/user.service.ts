@@ -8,7 +8,7 @@ import { IUser } from './clients.component';
 })
 export class UserService {
 
-  private readonly apiUrl = 'http://localhost:8080/adminUsers'; // Mettez l'URL correcte de votre backend
+  private readonly apiUrl = 'http://localhost:8080/adminClients'; // Mettez l'URL correcte de votre backend
   constructor(private http: HttpClient) { }
 
   deleteUser(userId: number): Observable<void> {
@@ -25,7 +25,7 @@ export class UserService {
     // Utilisez une requête PUT ou PATCH pour la modification, en envoyant les données modifiées
     return this.http.put<void>(editUrl, user);
   }
-  private readonly archiveapiUrl = 'http://localhost:8080/archived-users'; // Mettez l'URL correcte de votre backend
+  private readonly archiveapiUrl = 'http://localhost:8080/archived-Clients'; // Mettez l'URL correcte de votre backend
 
   getAllArchivedUsers(): Observable<IUser[]> {
     return this.http.get<IUser[]>(this.archiveapiUrl);

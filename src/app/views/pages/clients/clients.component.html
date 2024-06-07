@@ -32,15 +32,17 @@
                                 </thead>
                                 <tbody>
                                     <tr *ngFor="let user of users; index as i">
+                                     
                                         <td class="text-center">
                                            <c-avatar
                                                 size="md"
                                                 src="{{ getUserPhoto(user.photo)}}" 
                                                 status="{{ user.gender }}" 
                                             ></c-avatar>
-                                           
-                                            <!--<img [src]="getUserPhoto(user.photo)" alt="User Photo">-->
+                                        
+                                           <!--<img [src]="getUserPhoto(user.photo)" alt="User Photo">-->
                                         </td>
+                                   
                                         <td>
                                             <div>{{ user.firstName }} {{ user.lastName }}</div> <!-- Utilisez les propriétés firstName et lastName -->
                                             <div class="small text-medium-emphasis text-nowrap">
@@ -53,7 +55,6 @@
                                         <td>{{ user.id }}</td>
                                         <td>{{ user.gender }}</td>
                                         <td>{{ user.email }}</td>
-                                        <td >{{ user.address}}</td> <!-- Utilisez la propriété street de l'adresse -->
                                         <td>{{ user.phoneNumber }}</td>
                                         <td><a (click)="displayUser(user)"><i class="bi bi-pencil-square"></i></a></td>
                                         <td><i class="bi bi-trash"  (click)="deleteUser(user.id)"></i></td>                                        
@@ -115,7 +116,6 @@
                                         <td>{{ user.id }}</td>
                                         <td>{{ user.gender }}</td>
                                         <td>{{ user.email }}</td>
-                                        <td >{{ user.address}}</td> <!-- Utilisez la propriété street de l'adresse -->
                                         <td>{{ user.phoneNumber }}</td>
                                     </tr>
                                 </tbody>
