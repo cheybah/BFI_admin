@@ -15,6 +15,7 @@ export class AgencyComponent implements OnInit {
   createForm!: FormGroup;
   agencies: any[] = [];
   editForm: FormGroup;
+  noAgencies=false;
 
   constructor(
     private agencyService: agencyService,
@@ -41,14 +42,14 @@ export class AgencyComponent implements OnInit {
 }
 
   ngOnInit(): void {
-    this.fetchAgencies();
-  }
-
-  fetchAgencies() {
-    this.agencyService.getAllAgencies().subscribe(agencies => {
+    this.agencyService.getAllAgencies().subscribe((agencies) => {
       this.agencies = agencies;
-    });
-  }
+
+      // Set the flag if there are no agencies
+      this.noAgencies = this.agencies.length === 0;
+    });  }
+
+ 
 
   deleteAgency(id: number) {
     Swal.fire({
@@ -106,42 +107,51 @@ export class AgencyComponent implements OnInit {
     });
 }
 
+
+
+  fetchAgencies() {
+    this.agencyService.getAllAgencies().subscribe((agencies) => {
+      this.agencies = agencies;
+
+      // If no agencies, open the modal to create the first one
+      if (this.agencies.length === 0) {
+        this.openCreateModal();
+      }
+    });
+  }
+
   openCreateModal() {
     const modalElement = document.getElementById('agencyModal');
     if (modalElement) {
-        const modal = new bootstrap.Modal(modalElement);
-        modal.show();
+      const modal = new bootstrap.Modal(modalElement);
+      modal.show();
     }
   }
-  
-  
-  closeCreateModal() {
-    const modalElement = document.getElementById('agencyModal');
-    if (modalElement) {
-        const modal = bootstrap.Modal.getInstance(modalElement);
-        if (modal) {
-            modal.hide();
-        }
-    }
-  }
-  
+
+  // Remaining methods for editing, deleting, etc.
   submitCreateForm() {
     const newAgency = this.createForm.value;
     this.agencyService.addAgency(newAgency).subscribe(
-      (addedAgency: any) => {
-        // Assuming the added agency is returned in the response
-        this.agencies.push(addedAgency);
-        // Close the modal after successfully adding the agency
-        this.closeCreateModal();
-        // Reset the form for future use
-        this.createForm.reset();
+      (addedAgency) => {
+        this.agencies.push(addedAgency); // Add the newly created agency
+        this.closeCreateModal(); // Close the modal after addition
+        this.createForm.reset(); // Reset the form after submission
         Swal.fire('Success!', 'Agency added successfully.', 'success');
       },
       (error) => {
-        // Handle error cases
         console.error('Error adding agency:', error);
         Swal.fire('Error!', 'Failed to add agency. Please try again.', 'error');
       }
     );
+  }
+
+  closeCreateModal() {
+    const modalElement = document.getElementById('agencyModal');
+    if (modalElement) {
+      const modal = bootstrap.Modal.getInstance(modalElement);
+      if (modal) {
+        modal.hide();
+      }
+    }
   }
 }

@@ -1,4 +1,4 @@
-<form [formGroup]="editForm" *ngIf="editForm">
+ <form [formGroup]="editForm" *ngIf="editForm">
 
     <div class="fade-in">
         <c-card-body>
@@ -7,7 +7,15 @@
                     <c-card class="mb-4">
                         <c-card-header>Agences</c-card-header>
                         <c-card-body>
-                            <table
+                            <div *ngIf="noAgencies" class="text-center mt-4">
+                                <button
+                                  class="btn btn-primary"
+                                  (click)="openCreateModal()"
+                                >
+                                  <i class="bi bi-plus"></i> Create Your First Agency
+                                </button>
+                              </div>
+                            <table *ngIf="!noAgencies"
                                 [hover]="true"
                                 [responsive]="true"
                                 [striped]="true"
