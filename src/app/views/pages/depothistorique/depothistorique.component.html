@@ -1,0 +1,41 @@
+<div class="fade-in">
+    <c-card-body>
+        <c-row>
+            <c-col xs>
+                <c-card class="mb-4">
+                    <c-card-header>Historique de dépots</c-card-header>
+                    <c-card-body>
+                        <table
+                            [hover]="true"
+                            [responsive]="true"
+                            [striped]="true"
+                            align="middle"
+                            cTable
+                            class="mb-0 border"
+                        >
+                            <thead cTableColor="light">
+                                <tr>
+                                    <th>Option de depot</th>
+                                    <th>Depot compte source</th>
+                                    <th>Montant</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let depot of depots">
+                                    <td>{{ depot.depot_option }}</td>
+                                    <td>{{ depot.depot_compte_source }}</td>
+                                    <td> {{ depot.montant }}</td>
+                                    <td>
+                                        <button class="btn btn-success btn-sm" (click)="updateStatus(depot.id, 'Accepter')">Accepter</button>
+                                        <button class="btn btn-danger btn-sm" (click)="updateStatus(depot.id, 'Rejeter')">Rejeter</button>
+                                      </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </c-card-body>
+                </c-card>
+            </c-col>
+        </c-row>
+    </c-card-body>
+</div>

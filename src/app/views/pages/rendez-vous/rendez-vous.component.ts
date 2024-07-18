@@ -26,7 +26,7 @@ export class RendezVousComponent implements OnInit {
   }
 
   async updateStatus(id: number, status: string) {
-    const actionText = status === 'Approuvé' ? 'approve' : 'reject';
+    const actionText = status === 'Approuvé' ? 'approver' : 'rejeter';
     const confirmButtonText = status === 'Approuvé' ? 'Oui, approuvez !' : 'Oui, rejetez !';
     const successMessage = status === 'Approuvé' ? 'Le rendez-vous a été approuvé.' : 'Le rendez-vous a été rejetée.';
 
