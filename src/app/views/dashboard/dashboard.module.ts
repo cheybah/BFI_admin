@@ -24,6 +24,10 @@ import { CardModule } from '@coreui/angular';
 
 import {ClientsComponent} from '../pages/clients/clients.component'
 import { AgencyComponent } from '../pages/agency/agency.component';
+import { AccountsComponent } from '../pages/accounts/accounts.component';
+import { WithdrawalComponent } from '../pages/withdrawal/withdrawal.component';
+import { VirementhistoriqueComponent } from '../pages/virementhistorique/virementhistorique.component';
+import { DepothistoriqueComponent } from '../pages/depothistorique/depothistorique.component';
 
 @NgModule({
   imports: [
@@ -49,6 +53,10 @@ import { AgencyComponent } from '../pages/agency/agency.component';
   DashboardComponent,
   WriterDashComponent,
   ClientsComponent,
+  VirementhistoriqueComponent,
+  AccountsComponent,
+  WithdrawalComponent,
+  DepothistoriqueComponent,
   AgencyComponent]
 })
 export class DashboardModule {

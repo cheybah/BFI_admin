@@ -7,7 +7,7 @@
       <th>Sujet</th>
       <th>Contenu</th>
       <th>Date</th>
-      <th>Status</th>
+      <th>Statut</th>
       <th>Actions</th>
     </tr>
   </thead>
@@ -20,7 +20,7 @@
       <td>{{ reclamation.date }}</td>
       <td>{{ reclamation.status }}</td>
       <td>
-        <button *ngIf="!reclamation.responded" class="btn btn-success btn-sm" (click)="openModal(reclamation.idReclamation)">Respond</button>
+        <button *ngIf="!reclamation.responded" class="btn btn-success btn-sm" (click)="openModal(reclamation.idReclamation)">Répondre</button>
         <button *ngIf="reclamation.responded" class="btn btn-secondary btn-sm" disabled>Répondu</button>
       </td>
     </tr>
@@ -32,16 +32,16 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Write a response</h5>
+        <h5 class="modal-title">Ecrire une réponse</h5>
         <button type="button" class="close" (click)="closeModal()">
           <span>&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <textarea [(ngModel)]="responseText" class="form-control" placeholder="Write a response"></textarea>
+        <textarea [(ngModel)]="responseText" class="form-control" placeholder="Ecrire une réponse"></textarea>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" (click)="updateReclamation(currentId, responseText)">Send Response</button>
+        <button type="button" class="btn btn-primary" (click)="updateReclamation(currentId, responseText)">Envoyer Réponse</button>
         <button type="button" class="btn btn-secondary" (click)="closeModal()">Close</button>
       </div>
     </div>

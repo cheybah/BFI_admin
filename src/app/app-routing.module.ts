@@ -15,6 +15,8 @@ import { EmployeeComponent } from './views/pages/employee/employee.component';
 import { AccountsComponent } from './views/pages/accounts/accounts.component';
 import { PaymentComponent } from './views/pages/payment/payment.component';
 import { TransferComponent } from './views/pages/transfer/transfer.component';
+import { VirementhistoriqueComponent } from './views/pages/virementhistorique/virementhistorique.component';
+
 import { WithdrawalComponent } from './views/pages/withdrawal/withdrawal.component';
 import { CollectionComponent } from './views/pages/collection/collection.component';
 import { ServicesComponent } from './views/pages/services/services.component';
@@ -23,6 +25,7 @@ import {ProfileComponent } from './views/pages/profile/profile.component';
 import { ChatComponent } from './views/pages/chat/chat.component';
 import { RendezVousComponent } from './views/pages/rendez-vous/rendez-vous.component';
 import { ReclamationComponent } from './views/pages/reclamation/reclamation.component';
+import { DepothistoriqueComponent } from './views/pages/depothistorique/depothistorique.component';
 
 const routes: Routes = [
   {
@@ -34,7 +37,7 @@ const routes: Routes = [
     path: '',
     component: DefaultLayoutComponent,
     data: {
-      title: 'Home'
+      title: ''
     },
     children: [
       {
@@ -84,6 +87,7 @@ const routes: Routes = [
         path: 'admin-dash/accounts',
         component : AccountsComponent,    
       } ,
+    
       {
         path: 'admin-dash/services',
         component : ServicesComponent,    
@@ -97,6 +101,15 @@ const routes: Routes = [
       {
         path: 'admin-dash/transfer',
         component : TransferComponent,    
+      } ,
+      {
+        path: 'admin-dash/depot',
+        component : DepothistoriqueComponent,    
+      } ,
+      
+      {
+        path: 'admin-dash/historique',
+        component : VirementhistoriqueComponent,    
       } ,
       {
         path: 'admin-dash/withdrawal',

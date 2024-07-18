@@ -24,7 +24,6 @@
                                         <th>Id</th>
                                         <th>Genre</th>
                                         <th>Email</th>
-                                        <th class="text-center">Adresse</th>
                                         <th>Phone Number</th>
                                         <th>Details</th>
                                         <th>Delete<th>
@@ -47,7 +46,7 @@
                                             <div>{{ user.firstName }} {{ user.lastName }}</div> <!-- Utilisez les propriétés firstName et lastName -->
                                             <div class="small text-medium-emphasis text-nowrap">
                                                 <span>
-                                                    {{ user.state }} | Registered: {{ user.registered }}
+                                                    {{ user.state }} | Actif {{ user.registered }}
                                                 </span>
                                             </div>
                                         </td>
@@ -89,7 +88,6 @@
                                         <th>Id</th>
                                         <th>Genre</th>
                                         <th>Email</th>
-                                        <th class="text-center">Adresse</th>
                                         <th>Phone Number</th>
                                     </tr>
                                 </thead>
@@ -108,7 +106,7 @@
                                             <div>{{ user.firstName }} {{ user.lastName }}</div> <!-- Utilisez les propriétés firstName et lastName -->
                                             <div class="small text-medium-emphasis text-nowrap">
                                                 <span>
-                                                    {{ user.state }} | Registered: {{ user.registered }}
+                                                    {{ user.state }} | Bloqué {{ user.registered }}
                                                 </span>
                                             </div>
                                         </td>
@@ -132,7 +130,7 @@
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="userModalLabel">{{ selectedUser?.firstName }} {{ selectedUser?.lastName }} User Information</h5>
+          <h5 class="modal-title" id="userModalLabel">Informations du client {{ selectedUser?.firstName }} {{ selectedUser?.lastName }}</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -149,12 +147,12 @@
                   </div>
                   <h5>Email</h5>
                   <p>{{ selectedUser?.email }}</p>
-                  <h5 class="mt-4">Gender</h5>
+                  <h5 class="mt-4">Genre</h5>
                   <p>{{ selectedUser?.gender }}</p>
-                  <h5 class="mt-4">Phone Number</h5>
+                  <h5 class="mt-4">Numéro du Télèphone </h5>
                   <p>{{ selectedUser?.phoneNumber }}</p>
-                  <h5 class="mt-4">Address</h5>
-                  <p>{{ selectedUser?.address }}</p>
+                  <h5 class="mt-4">Adresse</h5>
+                  <p>{{ selectedUser?.address?.city }}</p>
                 </div>
               </div>
             </div>

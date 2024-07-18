@@ -71,3 +71,25 @@
     right: 0
 }
 
+.btn-small {
+    font-size: 12px;
+    padding: 5px 10px;
+    color: gold;
+    padding-bottom: 50px;
+}
+.btn-custom {
+    font-size: 14px;
+    padding: 10px 20px;
+    color: white;
+    background-color: #a56a11; /* Couleur bleue */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: -40px; /* Déplace le bouton vers le haut */
+
+    transition: background-color 0.3s;
+}
+
+.btn-custom:hover {
+    background-color: #e0a751;; /* Couleur bleue foncée */
+}

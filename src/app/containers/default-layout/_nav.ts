@@ -46,7 +46,7 @@ export const adminNavItems: INavData[] = [
         name: 'Listes',
         url: '/admin-dash/accounts',
         icon: 'bi bi-list-ul'
-      },
+      },/*
       {
         name: 'Types',
         url: '/admin-dash/types',
@@ -56,7 +56,7 @@ export const adminNavItems: INavData[] = [
         name: 'Services',
         url: '/admin-dash/services',
         icon: 'bi bi-gear'
-      }  
+      }  */
     ]
   },
   {
@@ -85,12 +85,12 @@ export const adminNavItems: INavData[] = [
       },
       {
         name: 'Virement',
-        url: '/admin-dash/transfer',
+        url: '/admin-dash/historique',
         icon: 'bi bi-arrow-right-short',
       },
       {
         name: 'Versement',
-        url: '/admin-dash/collection',
+        url: '/admin-dash/depot',
         icon: 'bi bi-arrow-left-short',
       },
       {
@@ -99,7 +99,7 @@ export const adminNavItems: INavData[] = [
         icon: 'bi bi-currency-dollar',
       }
     ]
-  },
+  },/*
   {
     name: 'Transférer',
     url: '/admin-dash/transferer',
@@ -110,11 +110,10 @@ export const adminNavItems: INavData[] = [
     url: '/admin-dash/demandes',
     icon: 'bi bi-file-earmark-text', 
   },
-
   {
     title: true,
     name: 'Gestion du flux de travail'
-  }
+  }*/
 ];
 
 export const writerNavItems: INavData[] = [

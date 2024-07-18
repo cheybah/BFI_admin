@@ -20,6 +20,7 @@ export interface IUser {
     street: string;
     city: string;
   };
+ 
 }
 
 

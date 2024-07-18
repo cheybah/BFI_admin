@@ -6,28 +6,28 @@
           <div class="card p-4">
             <div class="card-body">
               <form (ngSubmit)="onSubmitLogin()" #loginForm="ngForm">
-                <h1>Login</h1>
+                <h1>Se connecter</h1>
                 <p class="text-medium-emphasis">Connectez-vous à votre compte</p>
                 <div class="input-group mb-3">
                   <span class="input-group-text">
                     <i class="bi bi-person-fill"></i>                  
                   </span>
-                  <input id="login" placeholder="Username" [(ngModel)]="login" name="login" type="login" class="form-control"/>
+                  <input id="login" placeholder="Identifiant" [(ngModel)]="login" name="login" type="login" class="form-control"/>
                 </div>
                 <div class="input-group mb-4">
                   <span class="input-group-text">
                     <i class="bi bi-eye-fill" (click)="togglePasswordVisibility($event)"></i>
                   </span>
-                  <input id="password" placeholder="Password" type="password" [(ngModel)]="password" name="password" #passwordInput class="form-control"/>
+                  <input id="password" placeholder="Mot de passe" type="password" [(ngModel)]="password" name="password" #passwordInput class="form-control"/>
                 </div>
                 <div class="row">
                   <div class="col-6">
-                    <button class="btn btn-primary px-4" type="submit">Login</button>
+                    <button class="btn btn-primary px-4" type="submit">Se connecter</button>
         
                   </div>
                   <div class="col-6 text-right">
                     <button class="btn btn-link px-0" type="submit">
-                      Forgot password?
+                      Mot de passe oublié ?
                     </button>
                   </div>
                 </div>

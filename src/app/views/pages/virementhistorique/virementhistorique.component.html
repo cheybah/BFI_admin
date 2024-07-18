@@ -3,7 +3,7 @@
         <c-row>
             <c-col xs>
                 <c-card class="mb-4">
-                    <c-card-header>Comptes Bancaires</c-card-header>
+                    <c-card-header>Historique de virements</c-card-header>
                     <c-card-body>
                         <table
                             [hover]="true"
@@ -18,17 +18,15 @@
                                     <th>ID</th>
                                     <th>RIB</th>
                                     <th>Solde</th>
-                                    <th>Opérations Bancaires</th>
-                                    <th>Plus de détails</th>
+                                    
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr *ngFor="let operation of comptesBancaires">
-                                    <td>{{ operation.id }}</td>
-                                    <td>{{ operation.rib }}</td>
-                                    <td>{{ operation.solde }}</td>
-                                    <td><a ><i class="bi bi-pencil-square"></i></a></td>
-                                    <td><a ><i class="bi bi-pencil-square"></i></a></td>
+                                <tr *ngFor="let virement of virements">
+                                    <td>{{ virement.compteADebite }}</td>
+                                    <td>{{ virement.compteACrediter }}</td>
+                                    <td> {{ virement.montant }}</td>
+                                 
                                 </tr>
                             </tbody>
                         </table>

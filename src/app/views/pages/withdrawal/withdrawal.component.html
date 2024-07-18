@@ -1,1 +1,56 @@
-<p>withdrawal works!</p>
+<div class="fade-in">
+    <c-card-body>
+        <c-row>
+            <c-col xs>
+                <c-card class="mb-4">
+                    <c-card-header>Demandes de dépot et retrait</c-card-header>
+                    <c-card-body>
+                        <table [hover]="true" [responsive]="true" [striped]="true" align="middle" cTable
+                            class="mb-0 border">
+                            <thead cTableColor="light">
+                                <tr>
+
+                                    <th>Client</th>
+                                    <!--<th class="text-center">Ville</th>-->
+                                    <th>Id</th>
+                                    <th>Phone Number</th>
+                                    <th>Opération</th>
+                                    <th>Date</th>
+                                    <th>Plus de détails</th>
+                                    <th></th>
+                                    <th></th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+
+
+                                    <td>
+                                        <div>Dorra Salhi</div> <!-- Utilisez les propriétés firstName et lastName -->
+                                        <div class="small text-medium-emphasis text-nowrap">
+
+                                        </div>
+                                    </td>
+                                    <!-- <td class="text-center">{{ user.address.city }}</td> -->
+                                    <td>2</td>
+                                    <td>75 848 598</td>
+                                    <td>dépôt</td>
+                                    <td>02/04/2024</td>
+                                    <td><a><i class="bi bi-pencil-square"></i></a></td>
+                                    <td> <button class="btn btn-success btn-sm">Approuver</button> </td>
+                                    <td><button class="btn btn-danger btn-sm">Rejeter</button></td>
+
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </c-card-body>
+                </c-card>
+            </c-col>
+
+
+
+
+        </c-row>
+    </c-card-body>
